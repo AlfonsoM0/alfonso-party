@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { setVip } from '../firebase/set-vip';
 import { VIP } from '../firebase/types';
+import { revalidatePath } from 'next/cache';
 
 interface CardSendWpProps {
   name?: string;
@@ -41,12 +42,14 @@ export function EditorVIP({ name, msg, rol, isEdit, submitCB }: CardSendWpProps)
       rol: rolUser,
     };
     setVip(newVip)
-      .then(() => console.info(newVip))
+      .then(() => {
+        console.info(newVip);
+        revalidatePath('/e-vip');
+        revalidatePath('/[vip]');
+      })
       .catch((error) => console.error(error));
 
     setIsSend(true);
-
-    if (isEdit && submitCB) submitCB();
   }
 
   const formBorder = isSend ? 'border-success' : 'border-error';
