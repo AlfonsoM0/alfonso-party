@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { setVip } from '../firebase/set-vip';
 import { VIP } from '../firebase/types';
 import { revalidatePath } from 'next/cache';
+import { useRouter } from 'next/navigation';
 
 interface CardSendWpProps {
   name?: string;
@@ -14,7 +15,9 @@ interface CardSendWpProps {
   submitCB?: () => void;
 }
 
-export function EditorVIP({ name, msg, rol, isEdit, submitCB }: CardSendWpProps): JSX.Element {
+export function EditorVIP({ name, msg, rol, isEdit }: CardSendWpProps): JSX.Element {
+  const router = useRouter();
+
   const [nameUser, setNameUser] = useState(name || '');
   const [rolUser, setRolUser] = useState(rol || '');
   const [messageUser, setMessageUser] = useState(msg || '¡Te espero en mi Fiesta Retro!');
@@ -45,6 +48,7 @@ export function EditorVIP({ name, msg, rol, isEdit, submitCB }: CardSendWpProps)
       .then(() => console.info(newVip))
       .catch((error) => console.error(error));
 
+    router.refresh();
     setIsSend(true);
   }
 
