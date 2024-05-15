@@ -14,15 +14,16 @@ const msgOptions = [
 export function Titles() {
   const searchParams = useSearchParams();
   const name = searchParams.get('n') || 'Fiesta Retro';
+  const customMsg = searchParams.get('m');
 
-  const [msg, setMsg] = useState('Cumpleaños Dance');
+  const [msg, setMsg] = useState(customMsg || 'Cumpleaños Dance');
 
   useEffect(() => {
-    if (name !== 'Fiesta Retro') {
+    if (name !== 'Fiesta Retro' && !customMsg) {
       const randomMsg = msgOptions[Math.floor(Math.random() * msgOptions.length)];
       setMsg(randomMsg);
     }
-  }, [name]);
+  }, [name, customMsg]);
 
   return (
     <div>
