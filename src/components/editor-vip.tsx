@@ -9,14 +9,16 @@ interface CardSendWpProps {
   name?: string;
   msg?: string;
   rol?: string;
+  isEdit?: boolean;
+  submitCB?: () => void;
 }
 
-export function EditorVIP({ name, msg, rol }: CardSendWpProps): JSX.Element {
+export function EditorVIP({ name, msg, rol, isEdit, submitCB }: CardSendWpProps): JSX.Element {
   const [nameUser, setNameUser] = useState(name || '');
   const [rolUser, setRolUser] = useState(rol || '');
   const [messageUser, setMessageUser] = useState(msg || '¡Te espero en mi Fiesta Retro!');
 
-  const [isSend, setIsSend] = useState(false);
+  const [isSend, setIsSend] = useState(false || isEdit);
 
   function createAndCopy() {
     const wpMsg = `¡Hola ${nameUser}! *Tienes una invitación especial en:* https://fiesta.alfonso.ar/${encodeURIComponent(
@@ -26,10 +28,12 @@ export function EditorVIP({ name, msg, rol }: CardSendWpProps): JSX.Element {
 
     if (!nameUser || !rolUser) return;
 
-    setIsSend(true);
+    if (!isEdit) {
+      setNameUser('');
+      setRolUser('');
+    }
 
-    setNameUser('');
-    setRolUser('');
+    if (isSend) return;
 
     const newVip: VIP = {
       guest: nameUser,
@@ -39,6 +43,10 @@ export function EditorVIP({ name, msg, rol }: CardSendWpProps): JSX.Element {
     setVip(newVip)
       .then(() => console.info(newVip))
       .catch((error) => console.error(error));
+
+    setIsSend(true);
+
+    if (isEdit && submitCB) submitCB();
   }
 
   const formBorder = isSend ? 'border-success' : 'border-error';
@@ -54,8 +62,12 @@ export function EditorVIP({ name, msg, rol }: CardSendWpProps): JSX.Element {
               className="input input-bordered w-full"
               id="name"
               value={nameUser}
-              onChange={(e) => setNameUser(e.target.value)}
+              onChange={(e) => {
+                setNameUser(e.target.value);
+                setIsSend(false);
+              }}
               type="text"
+              disabled={isEdit}
               required
             />
           </label>
@@ -66,7 +78,10 @@ export function EditorVIP({ name, msg, rol }: CardSendWpProps): JSX.Element {
               className="input input-bordered w-full"
               id="rol"
               value={rolUser}
-              onChange={(e) => setRolUser(e.target.value)}
+              onChange={(e) => {
+                setRolUser(e.target.value);
+                setIsSend(false);
+              }}
               type="text"
             />
           </label>
@@ -77,7 +92,10 @@ export function EditorVIP({ name, msg, rol }: CardSendWpProps): JSX.Element {
               className="input input-bordered w-full"
               id="rol"
               value={messageUser}
-              onChange={(e) => setMessageUser(e.target.value)}
+              onChange={(e) => {
+                setMessageUser(e.target.value);
+                setIsSend(false);
+              }}
               type="text"
               required
             />
@@ -86,7 +104,7 @@ export function EditorVIP({ name, msg, rol }: CardSendWpProps): JSX.Element {
 
         <div className="tooltip" data-tip="Copiar al portapapeles">
           <button type="button" onClick={createAndCopy}>
-            Crear y Copiar Mensaje
+            {isEdit ? 'Editar' : 'Crear'} y Copiar Mensaje
           </button>
         </div>
       </div>
