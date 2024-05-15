@@ -1,28 +1,15 @@
 'use client';
 
+import { Titles } from 'components/titles';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense } from 'react';
 
 export default function Home() {
-  const searchParams = useSearchParams();
-  const name = searchParams.get('n') || 'Fiesta Retro';
-
-  const [msg, setMsg] = useState('Cumpleaños Dance');
-
-  useEffect(() => {
-    if (name !== 'Fiesta Retro') {
-      const randomMsg = msgOptions[Math.floor(Math.random() * msgOptions.length)];
-      setMsg(randomMsg);
-    }
-  }, [name]);
-
   return (
     <main className="flex h-[87vh] max-w-xs m-auto flex-col items-center justify-center gap-12">
-      <div>
-        <h1>{name}</h1>
-        <p>{msg}</p>
-      </div>
+      <Suspense>
+        <Titles />
+      </Suspense>
 
       <div>
         <h2>Viernes 31 de Mayo</h2>
@@ -44,11 +31,3 @@ export default function Home() {
     </main>
   );
 }
-
-const msgOptions = [
-  '¿Sale Jodita Retro?',
-  '¡Te invito a mi cumpleaños Retro, Pichan!',
-  '¡Sale Fiesta Retro +1000!',
-  '¡EXPLOTA la Joda Retro!',
-  '¡Metele pal baile Retro!',
-];
