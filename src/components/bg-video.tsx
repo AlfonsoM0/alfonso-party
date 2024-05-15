@@ -16,6 +16,7 @@ export function BgVideo() {
       </button>
 
       <video
+        poster="/bg-retro.jpg"
         className="fixed top-0 left-0 w-full h-full object-cover z-[-10]"
         autoPlay={true}
         playsInline={true}
