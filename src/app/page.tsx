@@ -1,5 +1,6 @@
 'use client';
 
+import { BgVideo } from 'components/bg-video';
 import { Titles } from 'components/titles';
 import Image from 'next/image';
 import { Suspense } from 'react';
@@ -7,6 +8,8 @@ import { Suspense } from 'react';
 export default function Home() {
   return (
     <main className="flex h-[87vh] max-w-xs m-auto flex-col items-center justify-center gap-12">
+      <BgVideo />
+
       <Suspense>
         <Titles />
       </Suspense>
