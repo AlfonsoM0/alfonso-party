@@ -42,11 +42,7 @@ export function EditorVIP({ name, msg, rol, isEdit, submitCB }: CardSendWpProps)
       rol: rolUser,
     };
     setVip(newVip)
-      .then(() => {
-        console.info(newVip);
-        revalidatePath('/e-vip');
-        revalidatePath('/[vip]');
-      })
+      .then(() => console.info(newVip))
       .catch((error) => console.error(error));
 
     setIsSend(true);

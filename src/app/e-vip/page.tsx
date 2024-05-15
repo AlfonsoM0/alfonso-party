@@ -1,7 +1,8 @@
 import { EditorVIP } from 'components/editor-vip';
 import { getAllVip } from '../../firebase/get-all-vip';
 import { VIP } from '../../firebase/types';
-import { revalidatePath } from 'next/cache';
+
+export const revalidate = 0;
 
 export default async function Page() {
   let vips: VIP[] = [];
