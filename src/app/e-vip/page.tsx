@@ -1,11 +1,13 @@
-import { UrlEditor } from 'components/editor-url';
+'use client';
+
+import { EditorVIP } from 'components/editor-vip';
 
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1>URL Editor</h1>
+      <h1>VIP Editor</h1>
 
-      <UrlEditor />
+      <EditorVIP />
     </main>
   );
 }

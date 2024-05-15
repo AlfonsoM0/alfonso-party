@@ -10,7 +10,7 @@ export default function Home() {
     <main className="flex h-[87vh] max-w-xs m-auto flex-col items-center justify-center gap-12">
       <BgVideo />
 
-      <Suspense>
+      <Suspense fallback={fallback}>
         <Titles />
       </Suspense>
 
@@ -34,3 +34,10 @@ export default function Home() {
     </main>
   );
 }
+
+const fallback = (
+  <div>
+    <h1>Fiesta Retro</h1>
+    <p>Cumpleaños Dance</p>
+  </div>
+);

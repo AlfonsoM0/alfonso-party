@@ -8,6 +8,7 @@ const msgOptions = [
   '¡Te invito a mi cumpleaños Retro, Pichan!',
   '¡Sale Fiesta Retro +1000!',
   '¡EXPLOTA la Joda Retro!',
+  '¡Que salpique la fiesta Retro!',
   '¡Metele pal baile Retro!',
 ];
 
