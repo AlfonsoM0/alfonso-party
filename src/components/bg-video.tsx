@@ -28,7 +28,10 @@ export function BgVideo() {
         <source src="/bg-retro.mp4" type="video/mp4" />
       </video>
 
-      <p className="fixed bottom-5 left-5 text-xs">By Alfonso Montes de Oca</p>
+      <footer className="fixed bottom-5 left-5 text-xs flex flex-col">
+        <p>By Alfonso Montes de Oca</p>
+        <small>© 2024</small>
+      </footer>
     </>
   );
 }

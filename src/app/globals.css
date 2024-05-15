@@ -4,23 +4,24 @@
 
 @layer base {
   h1 {
-    @apply text-5xl text-center font-bold;
+    @apply text-5xl text-center font-bold animate-in zoom-in duration-500;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff,
       1px -1px #fff, -1px 1px #fff;
   }
   h2 {
-    @apply text-2xl text-center font-bold;
+    @apply text-2xl text-center font-bold animate-in zoom-in duration-500;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff,
       1px -1px #fff, -1px 1px #fff;
   }
-  p {
-    @apply text-center font-bold;
+  p,
+  small {
+    @apply text-center font-bold animate-in zoom-in duration-1000;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff,
       1px -1px #fff, -1px 1px #fff;
   }
   button,
   a {
-    @apply text-2xl text-center font-bold rounded-full p-2 border-2 hover:bg-gradient-to-br hover:from-[#FF1CF7] hover:to-[#b249f8];
+    @apply text-2xl text-center font-bold rounded-full p-2 px-4 border-2 hover:bg-gradient-to-br hover:from-[#FF1CF7] hover:to-[#b249f8];
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff,
       1px -1px #fff, -1px 1px #fff;
   }
