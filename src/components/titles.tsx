@@ -13,8 +13,12 @@ const msgOptions = [
 
 export function Titles() {
   const searchParams = useSearchParams();
-  const name = searchParams.get('n') || 'Fiesta Retro';
-  const customMsg = searchParams.get('m');
+
+  const name64 = searchParams.get('n');
+  const name = name64 ? atob(name64) : 'Fiesta Retro';
+
+  const customMsg64 = searchParams.get('m');
+  const customMsg = customMsg64 ? atob(customMsg64) : null;
 
   const [msg, setMsg] = useState(customMsg || 'Cumpleaños Dance');
 
@@ -32,3 +36,11 @@ export function Titles() {
     </div>
   );
 }
+
+/* 
+btoa("Hola Mundo")
+'SG9sYSBNdW5kbw=='
+
+atob('SG9sYSBNdW5kbw==')
+'Hola Mundo'
+ */
