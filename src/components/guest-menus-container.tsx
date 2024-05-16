@@ -1,6 +1,7 @@
 'use client';
 
 import { GuestMenu } from '../firebase/types';
+import { ButtonTACC } from './button-tacc';
 import { useMenuGuestState } from './hooks/use-menu-guest-state';
 
 interface GuestMenusContainerProps {
@@ -29,7 +30,11 @@ export function GuestMenusContainer({ guestMenu }: GuestMenusContainerProps) {
         <ul>
           {shoppingCart.map((item) => (
             <li key={item.menuName}>
-              {item.menuName} x {item.quantity}
+              <div className="grid grid-cols-6">
+                <p className="col-span-4">{item.menuName}</p>
+                <p>x {item.quantity}</p>
+                <ButtonTACC isNoTACC={item.isNoTACC} />
+              </div>
             </li>
           ))}
         </ul>

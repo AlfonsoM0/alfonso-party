@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { useMenuGuestState } from './hooks/use-menu-guest-state';
 import { setGuestMenu as setGuestMenuToDB } from '../firebase/set-menu';
 import { useRouter } from 'next/navigation';
+import { ButtonTACC } from './button-tacc';
 
 export function SelectMenu() {
   const router = useRouter();
@@ -82,12 +83,8 @@ export function SelectMenu() {
               <button className="btn btn-circle btn-xs" onClick={() => incrementQuantity(option)}>
                 +
               </button>
-              <button
-                className={`btn btn-circle btn-sm ${isNoTACC ? 'text-success' : 'text-error'}`}
-                onClick={() => setMenuOptionIsNoTACC(menuName)}
-              >
-                {isNoTACC ? 'SIN TACC' : 'CON TACC'}
-              </button>
+
+              <ButtonTACC isNoTACC={isNoTACC} onClick={() => setMenuOptionIsNoTACC(menuName)} />
             </div>
           </div>
         );
@@ -95,7 +92,7 @@ export function SelectMenu() {
 
       <h2>Total: ${guestMenu.totalPrice}</h2>
 
-      <button onClick={onSubmit} className="w-full my-5">
+      <button onClick={onSubmit} className="w-full mt-5 mb-10">
         Reservar
       </button>
     </>
