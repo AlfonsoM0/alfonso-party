@@ -15,12 +15,12 @@ export default async function Page() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="flex min-h-screen flex-col items-center justify-center pt-10">
       <h1>VIP Editor</h1>
 
       <EditorVIP />
 
-      <h2>Ya enviados</h2>
+      <h2 className="mt-10">Ya enviados</h2>
       <div>
         {vips.map((vip) => (
           <EditorVIP key={vip.guest} name={vip.guest} msg={vip.msg} rol={vip.rol} isEdit />
