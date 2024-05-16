@@ -1,5 +1,25 @@
+export enum Collection {
+  VIP = 'VIP',
+  MENU = 'MENU',
+}
+
 export type VIP = {
   msg: string;
   guest: string;
   rol: string;
+};
+
+export type MenuOptions = {
+  menuName: string;
+  price: number;
+  quantity: number;
+};
+
+export type GuestMenu = {
+  id: string;
+  guest: string;
+  shoppingCart: MenuOptions[];
+  totalPrice: number;
+  isNoTACC: boolean;
+  isPaid: boolean;
 };
