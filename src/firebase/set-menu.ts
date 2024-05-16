@@ -6,7 +6,7 @@ import { db } from '.';
 import { Collection } from './enums';
 
 export async function setGuestMenu(guestMenu: GuestMenu): Promise<void> {
-  const docRef = doc(db, Collection.VIP, guestMenu.id);
+  const docRef = doc(db, Collection.MENU, guestMenu.id);
 
   return setDoc(docRef, guestMenu);
 }

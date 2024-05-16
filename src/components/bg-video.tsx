@@ -3,11 +3,15 @@
 import { useEffect, useState } from 'react';
 import { Icon } from './icons';
 
-export function BgVideo() {
+export function BgVideo({ isWhiteBg }: { isWhiteBg?: boolean }) {
   const [isMuted, setIsMuted] = useState(true);
 
   return (
     <>
+      {isWhiteBg ? (
+        <div className="fixed top-0 left-0 w-full h-full object-cover z-[-9] bg-[rgba(255,255,255,0.9)]" />
+      ) : null}
+
       <button
         onClick={() => setIsMuted(!isMuted)}
         className="fixed top-10 right-5 sm:right-20 animate-bounce border rounded-full p-2 bg-transparent hover:bg-black dark:hover:bg-black"

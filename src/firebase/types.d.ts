@@ -12,7 +12,9 @@ export type VIP = {
 export type MenuOptions = {
   menuName: string;
   price: number;
+  priceNoTacc?: number;
   quantity: number;
+  isNoTACC: boolean;
 };
 
 export type GuestMenu = {
@@ -20,6 +22,6 @@ export type GuestMenu = {
   guest: string;
   shoppingCart: MenuOptions[];
   totalPrice: number;
-  isNoTACC: boolean;
   isPaid: boolean;
+  createdAt: Date;
 };

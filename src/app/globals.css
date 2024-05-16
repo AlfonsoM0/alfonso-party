@@ -14,7 +14,8 @@
       1px -1px #fff, -1px 1px #fff;
   }
   p,
-  small {
+  small,
+  li {
     @apply text-center font-bold animate-in zoom-in duration-1000;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff,
       1px -1px #fff, -1px 1px #fff;
