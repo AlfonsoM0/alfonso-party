@@ -37,12 +37,11 @@ export function SelectMenu() {
     setIsSubmit(true);
     setErrorMsg('');
 
-    console.info('guestMenu => ', guestMenu);
-
-    setGuestMenuToDB({
+    const newGuestMenu = {
       ...guestMenu,
       shoppingCart: allMenuOptions.filter((option) => option.quantity > 0),
-    });
+    };
+    setGuestMenuToDB(newGuestMenu);
 
     router.push('/menu/reservas');
     router.refresh();
