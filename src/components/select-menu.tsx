@@ -39,6 +39,7 @@ export function SelectMenu() {
       ...guestMenu,
       shoppingCart: allMenuOptions.filter((option) => option.quantity > 0),
     });
+    router.prefetch('/menu/reservas');
     router.push('/menu/reservas');
   }
 

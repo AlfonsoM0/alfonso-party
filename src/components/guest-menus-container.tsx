@@ -17,7 +17,7 @@ export function GuestMenusContainer({ guestMenu }: GuestMenusContainerProps) {
   function onPaid() {
     navigator.clipboard.writeText('fiesta.alfonso.ar');
     alert(
-      'Pischiwan! te copié el alias para tranferir: fiesta.alfonso.ar \n Esa cuenta es única para la fiesta. \n \n Luego yo me fijo y te apruebo el pago.'
+      'Pischiwan! te copié el alias para tranferir al portapapeles. \n \n Alias: fiesta.alfonso.ar \n \n Esa cuenta es única para la fiesta. \n \n Luego yo me fijo y te apruebo el pago.'
     );
   }
 

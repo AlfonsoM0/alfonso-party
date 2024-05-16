@@ -21,20 +21,6 @@ export default function Page() {
         Ver Reservas
       </Link>
 
-      {/* 
-      <section className="max-w-md mt-10 p-5">
-        <h2>Por parte del cumpleañero</h2>
-
-        <ul className="card-body">
-          <li> 3 Pizzas de Mozzarella</li>
-          <li> 5 Pizzas Especiales</li>
-          <li> 2 Pizzas Especiales sin TACC</li>
-          <li> 3 Pizzas 4 Quesso</li>
-          <li> 2 Pizzas de Rúcula</li>
-          <li> ¡La Torta! </li>
-        </ul>
-      </section> */}
-
       <section className="max-w-md  p-5">
         <h2>Reserva tu Menú</h2>
 
