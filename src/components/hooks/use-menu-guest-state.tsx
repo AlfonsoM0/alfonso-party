@@ -17,7 +17,7 @@ interface UseMenuGuestStateProps {
 }
 
 interface UseMenuGuestStateActions {
-  setGuestMenu: (guestMenu: GuestMenu) => void;
+  setGuestMenu: (guestMenu?: GuestMenu) => void;
 }
 
 export const useMenuGuestState = create<UseMenuGuestStateProps & UseMenuGuestStateActions>(
@@ -25,6 +25,9 @@ export const useMenuGuestState = create<UseMenuGuestStateProps & UseMenuGuestSta
     guestMenu: initialGuestMenuState,
 
     // Actions
-    setGuestMenu: (guestMenu: GuestMenu) => set({ guestMenu }),
+    setGuestMenu: (guestMenu?: GuestMenu) =>
+      set({
+        guestMenu: guestMenu || initialGuestMenuState,
+      }),
   })
 );

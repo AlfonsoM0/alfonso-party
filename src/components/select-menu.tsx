@@ -11,10 +11,12 @@ import { ButtonTACC } from './button-tacc';
 export function SelectMenu() {
   const router = useRouter();
 
-  const { allMenuOptions, setMenuOptionQuantity, setMenuOptionIsNoTACC } = useMenuState();
+  const { allMenuOptions, setMenuOptionQuantity, setMenuOptionIsNoTACC, setMenuOtionsToDefault } =
+    useMenuState();
   const { guestMenu, setGuestMenu } = useMenuGuestState();
 
   const [errorMsg, setErrorMsg] = useState('');
+  const [isSubmit, setIsSubmit] = useState(false);
 
   function incrementQuantity(option: MenuOptions) {
     setMenuOptionQuantity(option.menuName, option.quantity + 1);
@@ -32,15 +34,25 @@ export function SelectMenu() {
       setErrorMsg('Por favor, agrega una opción.');
       return;
     }
-
+    setIsSubmit(true);
     setErrorMsg('');
+
     console.info('guestMenu => ', guestMenu);
+
     setGuestMenuToDB({
       ...guestMenu,
       shoppingCart: allMenuOptions.filter((option) => option.quantity > 0),
     });
-    router.prefetch('/menu/reservas');
+
     router.push('/menu/reservas');
+    router.refresh();
+
+    setMenuOtionsToDefault();
+    setGuestMenu();
+
+    setTimeout(() => {
+      setIsSubmit(false);
+    }, 2000);
   }
 
   useEffect(() => {
@@ -93,8 +105,8 @@ export function SelectMenu() {
 
       <h2>Total: ${guestMenu.totalPrice}</h2>
 
-      <button onClick={onSubmit} className="w-full mt-5 mb-10">
-        Reservar
+      <button onClick={onSubmit} disabled={isSubmit} className="w-full mt-5 mb-10">
+        {isSubmit ? <div className="loading loading-spinner" /> : 'Reservar'}
       </button>
     </>
   );
