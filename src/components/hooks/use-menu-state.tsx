@@ -92,7 +92,7 @@ export const useMenuState = create<UseMenuStateProps & UseMenuStateActions>((set
       isNoTACC: false,
     },
     {
-      menuName: 'Calzone Jamón y Queso',
+      menuName: 'Calzone J&Q',
       quantity: 0,
       price: 3750,
       priceNoTacc: undefined,

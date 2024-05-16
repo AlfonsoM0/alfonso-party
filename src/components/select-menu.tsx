@@ -95,7 +95,7 @@ export function SelectMenu() {
 
       <h2>Total: ${guestMenu.totalPrice}</h2>
 
-      <button onClick={onSubmit} className="w-full mt-4">
+      <button onClick={onSubmit} className="w-full my-5">
         Reservar
       </button>
     </>
