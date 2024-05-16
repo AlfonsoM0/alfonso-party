@@ -2,6 +2,12 @@ import { BgVideo } from 'components/bg-video';
 import { SelectMenu } from 'components/select-menu';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next/types';
+
+export const metadata: Metadata = {
+  title: 'Alfonso | Menu',
+  description: 'Elige qué quieres comer.',
+};
 
 export default function Page() {
   return (

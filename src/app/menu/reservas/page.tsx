@@ -3,8 +3,14 @@ import { getAllGuestMenu } from '../../../firebase/get-all-menu';
 import Image from 'next/image';
 import { GuestMenu } from '../../../firebase/types';
 import { BgVideo } from 'components/bg-video';
+import { Metadata } from 'next/types';
 
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: 'Alfonso | Reservas',
+  description: 'Consulta las reservas de menu.',
+};
 
 export default async function Page() {
   const allGuestsMenus = (await getAllGuestMenu()) || [];
