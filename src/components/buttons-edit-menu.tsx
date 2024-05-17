@@ -13,11 +13,17 @@ export function ButtonsEditMenu({ guestMenu }: { guestMenu: GuestMenu }) {
     setGuestMenu({
       ...guestMenu,
       isPaid: !isPaid,
+    }).catch((e) => {
+      console.log(e);
+      alert(e.message);
     });
     router.refresh();
   }
   function onDelete() {
-    deleteGuestMenu(guestMenu);
+    deleteGuestMenu(guestMenu).catch((e) => {
+      console.log(e);
+      alert(e.message);
+    });
     router.refresh();
   }
 

@@ -7,6 +7,8 @@ export default async function Page({ params }: { params: { vip: string } }) {
 
   try {
     const infoVIP = await getVIP(vip);
+
+    if (!infoVIP) return <></>;
     const { guest, msg, rol } = infoVIP;
 
     return (
