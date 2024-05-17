@@ -7,7 +7,7 @@ export function AuthNav() {
   const { setAdmin } = useAuth();
 
   return (
-    <div className="fixed top-0 right-0">
+    <div className="fixed top-0 right-0 z-[1]">
       <div className="tooltip tooltip-bottom" data-tip="Gestionar Menus">
         <Link className="btn btn-md btn-ghost" type="button" href="/e-menu">
           🍕

@@ -1,6 +1,7 @@
 import { ButtonsEditMenu } from 'components/buttons-edit-menu';
 import { getAllGuestMenu } from '../../../firebase/get-all-menu';
 import { orderAllGuestByDate } from '../../../utils/order-all-guest-by-date';
+import Link from 'next/link';
 
 export default async function Page() {
   const allGuestsMenus = (await getAllGuestMenu()) || [];
@@ -13,6 +14,12 @@ export default async function Page() {
     <main className="min-h-screen max-w-[400px] m-auto pt-10">
       <h1>Menu Editor</h1>
 
+      <br />
+      <div className="flex justify-center">
+        <Link className="btn-md" href="/e-menu/resumen">
+          Ver Resumen de Reservas
+        </Link>
+      </div>
       <br />
 
       <ul>
