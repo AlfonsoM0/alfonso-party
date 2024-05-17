@@ -1,4 +1,5 @@
 import { Auth } from 'components/auth/auth';
+import { AuthNav } from 'components/auth/auth-nav';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,5 +12,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <Auth>{children}</Auth>;
+  return (
+    <Auth>
+      <AuthNav />
+      {children}
+    </Auth>
+  );
 }
