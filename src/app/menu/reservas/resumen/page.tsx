@@ -19,9 +19,11 @@ export default async function Page() {
 
   const orderedGuestsMenusPaid = orderedGuestsMenus.filter((guest) => guest.isPaid);
 
+  const createdAt = new Date().toISOString();
+
   const GuestPartyTacc: GuestMenu = {
     id: 'GuestPartyTacc',
-    createdAt: new Date(),
+    createdAt,
     guest: 'Con TACC',
     isPaid: true,
     shoppingCart: getShoppingResumen(orderedGuestsMenusPaid).tacc,
@@ -33,7 +35,7 @@ export default async function Page() {
 
   const GuestPartyNoTacc: GuestMenu = {
     id: 'GuestPartyNoTacc',
-    createdAt: new Date(),
+    createdAt,
     guest: 'Sin TACC',
     isPaid: true,
     shoppingCart: getShoppingResumen(orderedGuestsMenusPaid).noTacc,
