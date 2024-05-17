@@ -20,10 +20,6 @@ export function GuestMenusContainer({ guestMenu }: GuestMenusContainerProps) {
       'Pischiwan! te copié el alias para tranferir al portapapeles. \n \n Alias: fiesta.alfonso.ar \n \n Esa cuenta es única para la fiesta. \n \n Luego yo me fijo y te apruebo el pago.'
     );
   }
-  function onKnowid() {
-    //TODO: experimental... crate an update section
-    navigator.clipboard.writeText(id);
-  }
 
   return (
     <li className="collapse collapse-plus bg-base-200 my-3">
@@ -43,7 +39,7 @@ export function GuestMenusContainer({ guestMenu }: GuestMenusContainerProps) {
           ))}
         </ul>
         <p>
-          <span onClick={onKnowid}>Total:</span>$ {totalPrice} |{' '}
+          <span>Total:</span>$ {totalPrice} |{' '}
           {isPaid ? (
             'Pagado ✅'
           ) : (
