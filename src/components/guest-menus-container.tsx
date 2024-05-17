@@ -2,7 +2,7 @@
 
 import { GuestMenu } from '../firebase/types';
 import { ButtonTACC } from './button-tacc';
-import { useMenuGuestState } from './hooks/use-menu-guest-state';
+import { useMenuGuestState } from '../hooks/use-menu-guest-state';
 
 interface GuestMenusContainerProps {
   guestMenu: GuestMenu;

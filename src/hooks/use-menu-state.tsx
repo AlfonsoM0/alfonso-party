@@ -1,7 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
-import { MenuOptions } from '../../firebase/types';
+import { MenuOptions } from '../firebase/types';
 
 interface UseMenuStateProps {
   allMenuOptions: MenuOptions[];

@@ -1,7 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
-import { GuestMenu } from '../../firebase/types';
+import { GuestMenu } from '../firebase/types';
 
 const initialGuestMenuState: GuestMenu = {
   id: crypto.randomUUID(),
