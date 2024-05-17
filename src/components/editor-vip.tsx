@@ -1,10 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { useState } from 'react';
 import { setVip } from '../firebase/set-vip';
 import { VIP } from '../firebase/types';
-import { revalidatePath } from 'next/cache';
 import { useRouter } from 'next/navigation';
 
 interface CardSendWpProps {

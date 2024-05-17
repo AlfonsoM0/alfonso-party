@@ -1,7 +1,5 @@
 import { GuestMenusContainer } from 'components/guest-menus-container';
 import { getAllGuestMenu } from '../../../firebase/get-all-menu';
-import Image from 'next/image';
-import { GuestMenu } from '../../../firebase/types';
 import { BgVideo } from 'components/bg-video';
 import { Metadata } from 'next/types';
 import { orderAllGuestByDate } from '../../../utils/order-all-guest-by-date';

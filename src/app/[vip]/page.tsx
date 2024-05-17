@@ -2,6 +2,9 @@ import { BgVideo } from 'components/bg-video';
 import { getVIP } from '../../firebase/get-vip';
 import { redirect } from 'next/navigation';
 
+// Revaliadte in 1 hours
+export const revalidate = 60 * 60 * 1;
+
 export default async function Page({ params }: { params: { vip: string } }) {
   const vip = decodeURIComponent(params.vip);
 
