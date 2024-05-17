@@ -20,11 +20,15 @@ export function GuestMenusContainer({ guestMenu }: GuestMenusContainerProps) {
       'Pischiwan! te copié el alias para tranferir al portapapeles. \n \n Alias: fiesta.alfonso.ar \n \n Esa cuenta es única para la fiesta. \n \n Luego yo me fijo y te apruebo el pago.'
     );
   }
+  function onKnowid() {
+    //TODO: experimental... crate an update section
+    navigator.clipboard.writeText(id);
+  }
 
   return (
     <li className="collapse collapse-plus bg-base-200 my-3">
       <input type="radio" name="my-accordion-3" defaultChecked={id === gId} />
-      <div className="collapse-title text-xl font-medium">De: {guest}</div>
+      <div className="collapse-title text-xl font-medium">{guest}</div>
 
       <div className="collapse-content">
         <ul>
@@ -39,7 +43,7 @@ export function GuestMenusContainer({ guestMenu }: GuestMenusContainerProps) {
           ))}
         </ul>
         <p>
-          Total: $ {totalPrice} |{' '}
+          <span onClick={onKnowid}>Total:</span>$ {totalPrice} |{' '}
           {isPaid ? (
             'Pagado ✅'
           ) : (
