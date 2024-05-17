@@ -28,10 +28,12 @@ export function SelectMenu() {
   function onSubmit() {
     if (!guestMenu.guest) {
       setErrorMsg('Por favor, introduce tu nombre.');
+      router.push('/menu/#menu');
       return;
     }
     if (!guestMenu.totalPrice) {
       setErrorMsg('Por favor, agrega una opción.');
+      router.push('/menu/#menu');
       return;
     }
     setIsSubmit(true);
@@ -80,7 +82,7 @@ export function SelectMenu() {
           onChange={(e) => setGuestMenu({ ...guestMenu, guest: e.target.value })}
         />
       </label>
-      <p className="text-error">{errorMsg}</p>
+      <p className="text-error animate-pulse">{errorMsg}</p>
 
       {allMenuOptions.map((option) => {
         const { menuName, price, priceNoTacc, isNoTACC, quantity } = option;

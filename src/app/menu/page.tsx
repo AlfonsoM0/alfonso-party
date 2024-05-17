@@ -1,6 +1,5 @@
 import { BgVideo } from 'components/bg-video';
 import { SelectMenu } from 'components/select-menu';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next/types';
 
@@ -14,7 +13,7 @@ export default function Page() {
     <main className="flex flex-col items-center justify-center p-5">
       <BgVideo isWhiteBg />
 
-      <h1>Menú</h1>
+      <h1 id="menu">Menú</h1>
       <p>Para comer de 23:00 a 01:00hs</p>
 
       <Link className="mt-5" href="/menu/reservas">
