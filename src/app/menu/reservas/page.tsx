@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { GuestMenu } from '../../../firebase/types';
 import { BgVideo } from 'components/bg-video';
 import { Metadata } from 'next/types';
+import { orderAllGuestByDate } from '../../../utils/order-all-guest-by-date';
 
 export const revalidate = 0;
 
@@ -46,16 +47,4 @@ export default async function Page() {
       ) : null}
     </main>
   );
-}
-
-function orderAllGuestByDate(allGuestsMenus: GuestMenu[]) {
-  return allGuestsMenus.sort((a, b) => {
-    if (a.createdAt > b.createdAt) {
-      return -1;
-    }
-    if (a.createdAt < b.createdAt) {
-      return 1;
-    }
-    return 0;
-  });
 }
