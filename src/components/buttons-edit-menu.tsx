@@ -22,24 +22,28 @@ export function ButtonsEditMenu({ guestMenu }: { guestMenu: GuestMenu }) {
   }
 
   return (
-    <li key={id} className="grid grid-cols-5 gap-1">
-      <div className="col-span-3 flex items-center">
-        <p className="text-left">
-          {guest} | ${totalPrice} {isPaid ? '✅' : '❌'}
-        </p>
+    <li key={id} className="flex flex-col border rounded-lg p-2 m-2">
+      <div className="flex justify-between items-center">
+        <p>{guest}</p>
+        <small>
+          ${totalPrice} {isPaid ? '✅' : '❌'}
+        </small>
       </div>
-      <label className="cursor-pointer label">
-        <span className="label-text">¿Pagado?</span>
-        <input
-          type="checkbox"
-          className="toggle toggle-success"
-          checked={isPaid}
-          onChange={onPaid}
-        />
-      </label>
-      <button className="btn btn-sm" onClick={onDelete}>
-        Eliminar
-      </button>
+      <div className="flex justify-between items-center">
+        <button className="btn btn-sm" onClick={onDelete}>
+          Eliminar
+        </button>
+
+        <label className="cursor-pointer label gap-2">
+          <span className="label-text">¿Pagado?</span>
+          <input
+            type="checkbox"
+            className="toggle toggle-success"
+            checked={isPaid}
+            onChange={onPaid}
+          />
+        </label>
+      </div>
     </li>
   );
 }

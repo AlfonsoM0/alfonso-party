@@ -39,6 +39,8 @@ export function SelectMenu() {
 
     const newGuestMenu = {
       ...guestMenu,
+      id: crypto.randomUUID(),
+      createdAt: new Date().toISOString(),
       shoppingCart: allMenuOptions.filter((option) => option.quantity > 0),
     };
     setGuestMenuToDB(newGuestMenu);

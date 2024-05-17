@@ -23,5 +23,5 @@ export type GuestMenu = {
   shoppingCart: MenuOptions[];
   totalPrice: number;
   isPaid: boolean;
-  createdAt: Date;
+  createdAt: string;
 };

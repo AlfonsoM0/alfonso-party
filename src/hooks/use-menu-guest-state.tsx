@@ -4,12 +4,12 @@ import { create } from 'zustand';
 import { GuestMenu } from '../firebase/types';
 
 const initialGuestMenuState: GuestMenu = {
-  id: crypto.randomUUID(),
+  id: '',
   guest: '',
   shoppingCart: [],
   totalPrice: 0,
   isPaid: false,
-  createdAt: new Date(),
+  createdAt: '',
 };
 
 interface UseMenuGuestStateProps {
