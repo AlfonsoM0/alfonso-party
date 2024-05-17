@@ -46,7 +46,7 @@ export default async function Page() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-5">
+    <main className="flex min-h-screen max-w-screen-sm m-auto flex-col items-center justify-center p-5">
       <BgVideo isWhiteBg />
 
       <h1>Reservas</h1>
