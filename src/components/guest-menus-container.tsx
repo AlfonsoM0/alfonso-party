@@ -48,7 +48,7 @@ export function GuestMenusContainer({ guestMenu }: GuestMenusContainerProps) {
           {isPaid ? (
             ' | Pagado ✅'
           ) : (
-            <div className="flex justify-center gap-1">
+            <span className="flex justify-center gap-1">
               <button onClick={onPaid} className="btn-md text-xs">
                 Pagar
               </button>
@@ -62,7 +62,7 @@ export function GuestMenusContainer({ guestMenu }: GuestMenusContainerProps) {
                 <span>Avisar por</span>
                 <span>WhatsApp</span>
               </Link>
-            </div>
+            </span>
           )}
         </p>
       </div>

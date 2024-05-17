@@ -3,6 +3,7 @@ import { getAllGuestMenu } from '../../../firebase/get-all-menu';
 import { BgVideo } from 'components/bg-video';
 import { Metadata } from 'next/types';
 import { orderAllGuestByDate } from '../../../utils/order-all-guest-by-date';
+import { ClickToUpdate } from './click-to-update';
 
 export const revalidate = 0;
 
@@ -23,6 +24,7 @@ export default async function Page() {
       <BgVideo isWhiteBg />
 
       <h1>Reservas</h1>
+      <ClickToUpdate />
 
       <br />
 
