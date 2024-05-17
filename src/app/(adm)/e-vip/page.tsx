@@ -1,6 +1,6 @@
 import { EditorVIP } from 'components/editor-vip';
-import { getAllVip } from '../../firebase/get-all-vip';
-import { VIP } from '../../firebase/types';
+import { getAllVip } from '../../../firebase/get-all-vip';
+import { VIP } from '../../../firebase/types';
 
 export const revalidate = 0;
 
