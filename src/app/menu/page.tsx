@@ -22,7 +22,7 @@ export default function Page() {
 
       <section className="max-w-md  p-5">
         <h2>Reserva tu Menú</h2>
-        <p className="text-xs text-info">* Próximamente más opciones sin TACC</p>
+        <p className="text-xs text-info">* Haz click en TACC para elegir</p>
 
         <SelectMenu />
       </section>
