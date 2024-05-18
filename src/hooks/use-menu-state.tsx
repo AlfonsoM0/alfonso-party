@@ -2,6 +2,7 @@
 
 import { create } from 'zustand';
 import { MenuOptions } from '../firebase/types';
+import { menuOptions } from '../config/menu';
 
 interface UseMenuStateProps {
   allMenuOptions: MenuOptions[];
@@ -13,158 +14,8 @@ interface UseMenuStateActions {
   setMenuOtionsToDefault: () => void;
 }
 
-const initialMenuOptionsState: MenuOptions[] = [
-  {
-    menuName: '1 Pizza Napolitana',
-    quantity: 0,
-    price: 3500,
-    priceNoTacc: 4000,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1 Pizza Rúcula',
-    quantity: 0,
-    price: 3500,
-    priceNoTacc: 4000,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1 Pizza Choclo',
-    quantity: 0,
-    price: 3500,
-    priceNoTacc: 4000,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1 Pizza Fugazeta',
-    quantity: 0,
-    price: 3500,
-    priceNoTacc: 4000,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1 Pizza Especial',
-    quantity: 0,
-    price: 3500,
-    priceNoTacc: 4000,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1 Pizza Calabresa',
-    quantity: 0,
-    price: 3500,
-    priceNoTacc: 4000,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1 Pizza 4 Quesos',
-    quantity: 0,
-    price: 3500,
-    priceNoTacc: 4000,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1 Pizza Primavera',
-    quantity: 0,
-    price: 3500,
-    priceNoTacc: 4000,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1/2 Pizza  Napolitana',
-    quantity: 0,
-    price: 1900,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1/2 Pizza  Rúcula',
-    quantity: 0,
-    price: 1900,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1/2 Pizza  Choclo',
-    quantity: 0,
-    price: 1900,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1/2 Pizza  Fugazeta',
-    quantity: 0,
-    price: 1900,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1/2 Pizza  Especial',
-    quantity: 0,
-    price: 1900,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1/2 Pizza  Calabresa',
-    quantity: 0,
-    price: 1900,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1/2 Pizza  4 Quesos',
-    quantity: 0,
-    price: 1900,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: '1/2 Pizza  Primavera',
-    quantity: 0,
-    price: 1900,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: 'Calzone 4 Quesos',
-    quantity: 0,
-    price: 3750,
-    priceNoTacc: 2200,
-    isNoTACC: false,
-  },
-  {
-    menuName: 'Calzone Napolitano',
-    quantity: 0,
-    price: 3750,
-    priceNoTacc: undefined,
-    isNoTACC: false,
-  },
-  {
-    menuName: 'Calzone Calabresa',
-    quantity: 0,
-    price: 3750,
-    priceNoTacc: undefined,
-    isNoTACC: false,
-  },
-  {
-    menuName: 'Calzone J&Q',
-    quantity: 0,
-    price: 3750,
-    priceNoTacc: undefined,
-    isNoTACC: false,
-  },
-  {
-    menuName: 'Calzone Mozarela',
-    quantity: 0,
-    price: 3750,
-    priceNoTacc: undefined,
-    isNoTACC: false,
-  },
-];
-
 export const useMenuState = create<UseMenuStateProps & UseMenuStateActions>((set) => ({
-  allMenuOptions: initialMenuOptionsState,
+  allMenuOptions: menuOptions,
 
   // Actions
   setMenuOptionQuantity: (menuName: string, quantity: number) => {
@@ -190,6 +41,6 @@ export const useMenuState = create<UseMenuStateProps & UseMenuStateActions>((set
     }));
   },
   setMenuOtionsToDefault: () => {
-    set({ allMenuOptions: initialMenuOptionsState });
+    set({ allMenuOptions: menuOptions });
   },
 }));

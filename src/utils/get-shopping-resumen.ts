@@ -1,9 +1,13 @@
+import { menuOptions } from '../config/menu';
 import { GuestMenu, MenuOptions } from '../firebase/types';
 
-export function getShoppingResumen(allGuestMenu: GuestMenu[]): {
-  tacc: MenuOptions[];
-  noTacc: MenuOptions[];
-} {
+export function getShoppingResumen({
+  allGuestMenu,
+  isNoTACC,
+}: {
+  allGuestMenu: GuestMenu[];
+  isNoTACC: boolean;
+}): MenuOptions[] {
   const completeShoppingOfAllGuest: MenuOptions[] = [];
 
   allGuestMenu.forEach((guestMenu) => {
@@ -19,12 +23,8 @@ export function getShoppingResumen(allGuestMenu: GuestMenu[]): {
     (menuOption) => menuOption.isNoTACC === true
   );
 
-  // combine MenuOptions with same menuName and isNoTACC values.
-
-  return {
-    tacc: combineShopping(completeShoppingOfAllGuest_tacc),
-    noTacc: combineShopping(completeShoppingOfAllGuest_noTacc),
-  };
+  if (isNoTACC) return combineShopping(completeShoppingOfAllGuest_noTacc, true);
+  else return combineShopping(completeShoppingOfAllGuest_tacc, false);
 }
 
 /**
@@ -32,18 +32,19 @@ export function getShoppingResumen(allGuestMenu: GuestMenu[]): {
  * @param allShoopping (only tacc or noTacc lists)
  * @returns MenuOptions[]
  */
-function combineShopping(allShoopping: MenuOptions[]): MenuOptions[] {
+function combineShopping(allShoopping: MenuOptions[], isNoTACC: boolean): MenuOptions[] {
+  const menuCards = menuOptions;
+
   const menuNames = new Set(allShoopping.map((menuOption) => menuOption.menuName));
   const combinedShopping: MenuOptions[] = [];
 
   menuNames.forEach((menuName) => {
-    const price = allShoopping.find((mo) => mo.menuName === menuName)!.price;
-    const priceNoTacc = allShoopping.find((mo) => mo.menuName === menuName)!.priceNoTacc;
+    const price = menuCards.find((mo) => mo.menuName === menuName)!.price;
+    const priceNoTacc = menuCards.find((mo) => mo.menuName === menuName)!.priceNoTacc;
     const quantity = allShoopping.reduce(
       (prev, curr) => prev + (curr.menuName === menuName ? curr.quantity : 0),
       0
     );
-    const isNoTACC = allShoopping[0].isNoTACC;
 
     combinedShopping.push({ menuName, price, priceNoTacc, quantity, isNoTACC });
   });

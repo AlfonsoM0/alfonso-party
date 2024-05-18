@@ -26,8 +26,11 @@ export default async function Page() {
     createdAt,
     guest: 'Con TACC',
     isPaid: true,
-    shoppingCart: getShoppingResumen(orderedGuestsMenusPaid).tacc,
-    totalPrice: getShoppingResumen(orderedGuestsMenusPaid).tacc.reduce((total, option) => {
+    shoppingCart: getShoppingResumen({ allGuestMenu: orderedGuestsMenusPaid, isNoTACC: false }),
+    totalPrice: getShoppingResumen({
+      allGuestMenu: orderedGuestsMenusPaid,
+      isNoTACC: false,
+    }).reduce((total, option) => {
       const { price, quantity } = option;
       return total + price * quantity;
     }, 0),
@@ -38,11 +41,14 @@ export default async function Page() {
     createdAt,
     guest: 'Sin TACC',
     isPaid: true,
-    shoppingCart: getShoppingResumen(orderedGuestsMenusPaid).noTacc,
-    totalPrice: getShoppingResumen(orderedGuestsMenusPaid).noTacc.reduce((total, option) => {
-      const { priceNoTacc, quantity } = option;
-      return total + (priceNoTacc || 0) * quantity;
-    }, 0),
+    shoppingCart: getShoppingResumen({ allGuestMenu: orderedGuestsMenusPaid, isNoTACC: true }),
+    totalPrice: getShoppingResumen({ allGuestMenu: orderedGuestsMenusPaid, isNoTACC: true }).reduce(
+      (total, option) => {
+        const { priceNoTacc, quantity } = option;
+        return total + (priceNoTacc || 0) * quantity;
+      },
+      0
+    ),
   };
 
   return (
