@@ -1,7 +1,13 @@
 import { karaokeListUrl } from 'config/const';
+import { Metadata } from 'next/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import karaokeTutorial from 'public/karaoke_playlist_tutorial.jpg';
+
+export const metadata: Metadata = {
+  title: 'Alfonso | Karaoke',
+  description: 'Elige tus canciones favoritas.',
+};
 
 export default function Page() {
   return (
