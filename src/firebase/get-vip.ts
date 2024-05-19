@@ -1,7 +1,7 @@
 'use server';
 
 import { doc, getDoc } from 'firebase/firestore/lite';
-import { db } from '.';
+import { db } from './db';
 import { Collection } from './enums';
 import { VIP } from './types';
 

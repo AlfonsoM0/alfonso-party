@@ -19,10 +19,12 @@
     ],
     "paths": {
       "components/*": ["./src/components/*"],
-      "firebase/*": ["./src/firebase/*"],
-      "utils/*": ["./src/utils/*"],
-      "config/*": ["./src/config/*"],
-      "hooks/*": ["./src/hooks/*"]
+      "components": ["./src/components/index.ts"],
+      "firebase": ["./src/firebase/index.ts"],
+      "firebase/types": ["./src/firebase/types.d.ts"],
+      "utils": ["./src/utils/index.ts"],
+      "hooks": ["./src/hooks/index.ts"],
+      "config/*": ["./src/config/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,4 +1,4 @@
-import { SelectMenu } from 'components/select-menu';
+import { SelectMenu } from 'components';
 import Link from 'next/link';
 import { Metadata } from 'next/types';
 

@@ -1,4 +1,4 @@
-import { getVIP } from '../../firebase/get-vip';
+import { getVIP } from 'firebase';
 import { redirect } from 'next/navigation';
 
 // Revaliadte in 1 hours

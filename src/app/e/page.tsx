@@ -1,4 +1,4 @@
-import { UrlEditor } from 'components/editor-url';
+import { UrlEditor } from 'components';
 
 export default function Page() {
   return (

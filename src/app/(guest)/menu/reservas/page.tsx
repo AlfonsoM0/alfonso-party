@@ -1,9 +1,8 @@
 import { GuestMenusContainer } from 'components/guest-menus-container';
-import { getAllGuestMenu } from 'firebase/get-all-menu';
+import { getAllGuestMenu } from 'firebase';
 import { Metadata } from 'next/types';
-import { orderAllGuestByDate } from 'utils/order-all-guest-by-date';
+import { deleteOldGuestMenus, orderAllGuestByDate } from 'utils';
 import { ClickToUpdate } from './click-to-update';
-import { deleteOldGuestMenus } from 'utils/delete-old-guest-menus';
 import { hsToDeleteAGuesMenu } from 'config/const';
 import Link from 'next/link';
 

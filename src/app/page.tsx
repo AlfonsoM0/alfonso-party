@@ -1,7 +1,6 @@
 'use client';
 
-import { BgVideo } from 'components/bg-video';
-import { Titles } from 'components/titles';
+import { Titles } from 'components';
 import { Suspense } from 'react';
 
 export default function Home() {

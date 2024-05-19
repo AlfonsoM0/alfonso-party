@@ -1,6 +1,6 @@
-import { EditorVIP } from 'components/editor-vip';
-import { getAllVip } from 'firebase/get-all-vip';
-import { VIP } from 'firebase/types';
+import { EditorVIP } from 'components';
+import { getAllVip } from 'firebase';
+import type { VIP } from 'firebase/types';
 
 export default async function Page() {
   let vips: VIP[] = [];

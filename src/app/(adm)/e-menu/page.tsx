@@ -1,9 +1,8 @@
-import { ButtonsEditMenu } from 'components/buttons-edit-menu';
-import { getAllGuestMenu } from 'firebase/get-all-menu';
-import { orderAllGuestByDate } from 'utils/order-all-guest-by-date';
+import { ButtonsEditMenu } from 'components';
+import { getAllGuestMenu } from 'firebase';
+import { deleteOldGuestMenus, orderAllGuestByDate } from 'utils';
 import Link from 'next/link';
 import { hsToDeleteAGuesMenu } from 'config/const';
-import { deleteOldGuestMenus } from 'utils/delete-old-guest-menus';
 
 export default async function Page() {
   const allGuestsMenus = (await getAllGuestMenu()) || [];
