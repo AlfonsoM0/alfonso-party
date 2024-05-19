@@ -8,3 +8,4 @@ export * from './guest-menus-container';
 export * from './select-menu';
 export * from './titles';
 export * from './video';
+export * from './guest-nav';

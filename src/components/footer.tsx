@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import imgInstagram from '../../public/instagram.svg';
-import imgAlfonsoIcon from '../../public/alfonso-app-icon-512x512.png';
+import imgInstagram from 'public/instagram.svg';
+import imgAlfonsoIcon from 'public/alfonso-app-icon-512x512.png';
 import Link from 'next/link';
 
 export function Footer() {

@@ -18,6 +18,7 @@
       }
     ],
     "paths": {
+      "public/*": ["./public/*"],
       "components/*": ["./src/components/*"],
       "components": ["./src/components/index.ts"],
       "firebase": ["./src/firebase/index.ts"],

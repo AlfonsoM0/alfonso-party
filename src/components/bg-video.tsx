@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Icon } from './icons';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import bgRetro from '../../public/Disco_Ball.svg';
+import bgRetro from 'public/Disco_Ball.svg';
 import { usePathname } from 'next/navigation';
 
 const VideoSrc = dynamic(() => import('./video'), { ssr: false, loading: () => fallbackImage });
