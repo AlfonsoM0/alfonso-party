@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { Icon } from './icons';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import bgRetro from '../../public/Disco_Ball.svg';
 
-const VideoSrc = dynamic(() => import('./video'), { ssr: false });
+const VideoSrc = dynamic(() => import('./video'), { ssr: false, loading: () => fallbackImage });
 
 interface BgVideoProps {
   isWhiteBg?: boolean;
@@ -34,7 +36,7 @@ export function BgVideo({ isWhiteBg }: BgVideoProps) {
         src={videoSRC}
         type="video/mp4"
         //video
-        poster="/bg-retro.jpg"
+        poster={undefined}
         className="fixed top-0 left-0 w-full h-full object-cover z-[-10]"
         autoPlay={true}
         playsInline={true}
@@ -44,11 +46,12 @@ export function BgVideo({ isWhiteBg }: BgVideoProps) {
         muted={isMuted}
         // controls
       />
-
-      <footer className="fixed bottom-5 left-5 text-xs flex flex-col">
-        <p>By Alfonso Montes de Oca</p>
-        <small>© 2024</small>
-      </footer>
     </>
   );
 }
+
+const fallbackImage = (
+  <div className="fixed top-0 left-0 w-full h-full object-cover z-[-10] px-[25vw] pt-[15vh] pb-[10vh]">
+    <Image src={bgRetro} alt="Fiesta Retro" width={1280} height={720} className="opacity-20" />
+  </div>
+);
