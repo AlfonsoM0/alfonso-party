@@ -5,6 +5,7 @@ import { Icon } from './icons';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import bgRetro from '../../public/Disco_Ball.svg';
+import { usePathname } from 'next/navigation';
 
 const VideoSrc = dynamic(() => import('./video'), { ssr: false, loading: () => fallbackImage });
 
@@ -13,6 +14,9 @@ interface BgVideoProps {
 }
 
 export function BgVideo({ isWhiteBg }: BgVideoProps) {
+  const urlPath = usePathname();
+  const isHome = urlPath === '/';
+
   const videos = ['/bg-retro.mp4', '/bg_discoball_pruple_music.mp4', '/bg_discoball_red_music.mp4'];
   const videoSRC = videos[Math.floor(Math.random() * videos.length)];
 
@@ -20,7 +24,7 @@ export function BgVideo({ isWhiteBg }: BgVideoProps) {
 
   return (
     <>
-      {isWhiteBg ? (
+      {isWhiteBg || !isHome ? (
         <div className="fixed top-0 left-0 w-full h-full object-cover z-[-9] bg-[rgba(255,255,255,0.9)]" />
       ) : null}
 

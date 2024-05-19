@@ -1,7 +1,6 @@
 import { GuestMenusContainer } from 'components/guest-menus-container';
 import { getAllGuestMenu } from '../../../../firebase/get-all-menu';
 import { GuestMenu } from '../../../../firebase/types';
-import { BgVideo } from 'components/bg-video';
 import { Metadata } from 'next/types';
 import { orderAllGuestByDate } from '../../../../utils/order-all-guest-by-date';
 import { getShoppingResumen } from '../../../../utils/get-shopping-resumen';
@@ -60,8 +59,6 @@ export default async function Page() {
 
   return (
     <main className="flex min-h-screen max-w-screen-sm m-auto flex-col items-center justify-center p-5">
-      <BgVideo isWhiteBg />
-
       <h1>Reservas</h1>
       <span>Resumen total de comida pagada</span>
       <span>$ {GuestPartyTacc.totalPrice + GuestPartyNoTacc.totalPrice}</span>

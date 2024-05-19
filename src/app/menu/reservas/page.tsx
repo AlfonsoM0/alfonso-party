@@ -1,6 +1,5 @@
 import { GuestMenusContainer } from 'components/guest-menus-container';
 import { getAllGuestMenu } from '../../../firebase/get-all-menu';
-import { BgVideo } from 'components/bg-video';
 import { Metadata } from 'next/types';
 import { orderAllGuestByDate } from '../../../utils/order-all-guest-by-date';
 import { ClickToUpdate } from './click-to-update';
@@ -28,8 +27,6 @@ export default async function Page() {
 
   return (
     <main className="flex min-h-[calc(100vh-66px)] flex-col items-center justify-center py-5 pt-20 mb-10">
-      <BgVideo isWhiteBg />
-
       <h1>Reservas</h1>
       <ClickToUpdate />
 

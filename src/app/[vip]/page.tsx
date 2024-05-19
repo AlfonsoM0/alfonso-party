@@ -1,4 +1,3 @@
-import { BgVideo } from 'components/bg-video';
 import { getVIP } from '../../firebase/get-vip';
 import { redirect } from 'next/navigation';
 
@@ -16,8 +15,6 @@ export default async function Page({ params }: { params: { vip: string } }) {
 
     return (
       <main className="flex h-[87vh] mt-5 max-w-xs m-auto flex-col items-center justify-center gap-12">
-        <BgVideo />
-
         <div>
           <h1>{guest}</h1>
           <p>{msg}</p>

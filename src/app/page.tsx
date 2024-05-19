@@ -7,8 +7,6 @@ import { Suspense } from 'react';
 export default function Home() {
   return (
     <main className="flex h-[87vh] max-w-xs m-auto flex-col items-center justify-center gap-12">
-      <BgVideo />
-
       <Suspense fallback={fallbackTitle}>
         <Titles />
       </Suspense>

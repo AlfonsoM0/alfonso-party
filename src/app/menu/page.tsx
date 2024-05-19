@@ -1,4 +1,3 @@
-import { BgVideo } from 'components/bg-video';
 import { SelectMenu } from 'components/select-menu';
 import Link from 'next/link';
 import { Metadata } from 'next/types';
@@ -11,8 +10,6 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="min-h-[calc(100vh-66px)] flex flex-col items-center justify-center p-5 pt-20">
-      <BgVideo isWhiteBg />
-
       <h1 id="menu">Menú</h1>
       <p>Para comer de 23:00 a 01:00hs</p>
 
