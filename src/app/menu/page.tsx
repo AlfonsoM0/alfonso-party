@@ -23,7 +23,7 @@ export default function Page() {
       <section className="max-w-md  p-5">
         <h2>Reserva tu Menú</h2>
         <p className="text-xs text-info">* Click en `TACC` para elegir con o sin.</p>
-        <p className="text-xs text-info">* `Crear Pedido` crear y ver todos los pedidos.</p>
+        <p className="text-xs text-info">* `Crear Pedido` y ver todos los pedidos.</p>
         <p className="text-xs text-info">* Solo los pedidos pagados son reservados.</p>
 
         <SelectMenu />
