@@ -24,7 +24,7 @@ export default async function Page() {
   const orderedGuestsMenusNotPaid = orderedGuestsMenus.filter((guest) => !guest.isPaid);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-5 my-10">
+    <main className="flex min-h-[calc(100vh-66px)] flex-col items-center justify-center p-5">
       <BgVideo isWhiteBg />
 
       <h1>Reservas</h1>

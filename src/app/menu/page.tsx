@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="flex flex-col items-center justify-center p-5">
+    <main className="min-h-[calc(100vh-66px)] flex flex-col items-center justify-center p-5 pt-20">
       <BgVideo isWhiteBg />
 
       <h1 id="menu">Menú</h1>
@@ -23,8 +23,8 @@ export default function Page() {
       <section className="max-w-md  p-5">
         <h2>Reserva tu Menú</h2>
         <p className="text-xs text-info">* Click en `TACC` para elegir con o sin.</p>
-        <p className="text-xs text-info">* `Crear Pedido` y ver todos los pedidos.</p>
-        <p className="text-xs text-info">* Solo los pedidos pagados son reservados.</p>
+        <p className="text-xs text-info">* `Crear Pedido` para crear y ver todos los pedidos.</p>
+        <p className="text-xs text-info mb-2">* Solo los pedidos pagados son reservados.</p>
 
         <SelectMenu />
       </section>
