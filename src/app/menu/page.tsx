@@ -17,12 +17,14 @@ export default function Page() {
       <p>Para comer de 23:00 a 01:00hs</p>
 
       <Link className="mt-5" href="/menu/reservas">
-        Ver Reservas
+        Ver Pedidos
       </Link>
 
       <section className="max-w-md  p-5">
         <h2>Reserva tu Menú</h2>
-        <p className="text-xs text-info">* Haz click en TACC para elegir</p>
+        <p className="text-xs text-info">* Click en `TACC` para elegir con o sin.</p>
+        <p className="text-xs text-info">* `Crear Pedido` crear y ver todos los pedidos.</p>
+        <p className="text-xs text-info">* Solo los pedidos pagados son reservados.</p>
 
         <SelectMenu />
       </section>
