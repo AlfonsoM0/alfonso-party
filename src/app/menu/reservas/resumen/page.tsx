@@ -5,6 +5,8 @@ import { BgVideo } from 'components/bg-video';
 import { Metadata } from 'next/types';
 import { orderAllGuestByDate } from '../../../../utils/order-all-guest-by-date';
 import { getShoppingResumen } from '../../../../utils/get-shopping-resumen';
+import { deleteOldGuestMenus } from '../../../../utils/delete-old-guest-menus';
+import { hsToDeleteAGuesMenu } from '../../../../config/const';
 
 export const revalidate = 0;
 
@@ -15,7 +17,12 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const allGuestsMenus = (await getAllGuestMenu()) || [];
-  const orderedGuestsMenus = orderAllGuestByDate(allGuestsMenus);
+  const allGuestsMenusNew = deleteOldGuestMenus({
+    GuestMenus: allGuestsMenus,
+    hours: hsToDeleteAGuesMenu,
+  });
+
+  const orderedGuestsMenus = orderAllGuestByDate(allGuestsMenusNew);
 
   const orderedGuestsMenusPaid = orderedGuestsMenus.filter((guest) => guest.isPaid);
 

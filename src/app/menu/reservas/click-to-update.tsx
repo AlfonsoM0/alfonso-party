@@ -8,15 +8,15 @@ export function ClickToUpdate() {
   return (
     <>
       <small>
-        * Si no aparece tu pedido, haz{' '}
+        * Si no aparece tu pedido,
         <span className="btn btn-xs btn-ghost text-info" onClick={() => router.refresh()}>
-          click aquí
+          haz click aquí
         </span>{' '}
         para actualizar la página.
       </small>
 
       <small>* Nuestro master chef necesita que confirmes tu pedido para reservar.</small>
-      <small>* Las reservas no confirmadas son eliminadas luego de 1 hora.</small>
+      <small>* Las reservas no confirmadas se eliminan automaticamente pasadas las 8hs.</small>
     </>
   );
 }

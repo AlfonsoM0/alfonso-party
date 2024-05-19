@@ -5,6 +5,7 @@ import { Metadata } from 'next/types';
 import { orderAllGuestByDate } from '../../../utils/order-all-guest-by-date';
 import { ClickToUpdate } from './click-to-update';
 import { deleteOldGuestMenus } from '../../../utils/delete-old-guest-menus';
+import { hsToDeleteAGuesMenu } from '../../../config/const';
 
 export const revalidate = 0;
 
@@ -15,16 +16,18 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const allGuestsMenus = (await getAllGuestMenu()) || [];
+  const allGuestsMenusNew = deleteOldGuestMenus({
+    GuestMenus: allGuestsMenus,
+    hours: hsToDeleteAGuesMenu,
+  });
 
-  deleteOldGuestMenus({ GuestMenus: allGuestsMenus, hours: 1 });
-
-  const orderedGuestsMenus = orderAllGuestByDate(allGuestsMenus);
+  const orderedGuestsMenus = orderAllGuestByDate(allGuestsMenusNew);
 
   const orderedGuestsMenusPaid = orderedGuestsMenus.filter((guest) => guest.isPaid);
   const orderedGuestsMenusNotPaid = orderedGuestsMenus.filter((guest) => !guest.isPaid);
 
   return (
-    <main className="flex min-h-[calc(100vh-66px)] flex-col items-center justify-center p-5">
+    <main className="flex min-h-[calc(100vh-66px)] flex-col items-center justify-center py-5 pt-20 mb-10">
       <BgVideo isWhiteBg />
 
       <h1>Reservas</h1>
