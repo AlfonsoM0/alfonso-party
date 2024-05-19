@@ -13,7 +13,7 @@ export default function Page() {
       <h1 id="menu">Menú</h1>
       <p>Para comer de 23:00 a 01:00hs</p>
 
-      <Link className="mt-5" href="/menu/reservas">
+      <Link className="mt-5 text-info" href="/menu/reservas">
         Ver Pedidos
       </Link>
 

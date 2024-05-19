@@ -5,6 +5,7 @@ import { orderAllGuestByDate } from '../../../utils/order-all-guest-by-date';
 import { ClickToUpdate } from './click-to-update';
 import { deleteOldGuestMenus } from '../../../utils/delete-old-guest-menus';
 import { hsToDeleteAGuesMenu } from '../../../config/const';
+import Link from 'next/link';
 
 export const revalidate = 0;
 
@@ -26,9 +27,12 @@ export default async function Page() {
   const orderedGuestsMenusNotPaid = orderedGuestsMenus.filter((guest) => !guest.isPaid);
 
   return (
-    <main className="flex min-h-[calc(100vh-66px)] flex-col items-center justify-center py-5 pt-20 mb-10">
+    <main className="flex min-h-[calc(100vh-66px)] flex-col items-center py-5 pt-20 pb-10">
       <h1>Reservas</h1>
       <ClickToUpdate />
+      <Link className="mt-5 text-info" href="/menu">
+        Volver al Menú
+      </Link>
 
       <br />
 
