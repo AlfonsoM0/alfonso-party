@@ -12,11 +12,17 @@ export function Footer() {
       </div>
 
       <div className="flex">
-        <Link href={'https://www.alfonso.ar/'} rel="noopener noreferrer" className="border-none ">
+        <Link
+          href={'https://www.alfonso.ar/'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border-none "
+        >
           <Image src={imgAlfonsoIcon} alt="Instagram" width={30} height={30} priority />
         </Link>
         <Link
           href={'https://www.instagram.com/montesdeoca_alfonso/'}
+          target="_blank"
           rel="noopener noreferrer"
           className="border-none "
         >
