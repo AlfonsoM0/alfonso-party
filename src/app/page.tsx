@@ -1,11 +1,17 @@
 'use client';
 
-import { Titles } from 'components';
+import { GuestNav, Titles } from 'components';
 import { Suspense } from 'react';
+import { useShowNavState } from 'hooks';
+import { calendarUrl } from 'config/const';
 
 export default function Home() {
+  const { isShowNav } = useShowNavState();
+
   return (
     <main className="flex h-[87vh] max-w-xs m-auto flex-col items-center justify-center gap-12">
+      {isShowNav ? <GuestNav /> : null}
+
       <Suspense fallback={fallbackTitle}>
         <Titles />
       </Suspense>
@@ -19,12 +25,8 @@ export default function Home() {
         className="tooltip w-full animate-in zoom-in duration-500"
         data-tip="Confirmar Google Calendar"
       >
-        <a
-          href="https://calendar.app.google/twzDcTZaSMsLMY8s5"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          ASISTIR
+        <a href={calendarUrl} rel="noopener noreferrer" target="_blank">
+          {isShowNav ? 'VER EVENTO' : 'ASISTIR'}
         </a>
       </div>
     </main>

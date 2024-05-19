@@ -1,8 +1,8 @@
 'use client';
 
-import { GuestMenu } from '../firebase/types';
+import { GuestMenu } from 'firebase/types';
 import { ButtonTACC } from './button-tacc';
-import { useMenuGuestState } from '../hooks/use-menu-guest-state';
+import { useMenuGuestState } from 'hooks';
 import Link from 'next/link';
 
 interface GuestMenusContainerProps {

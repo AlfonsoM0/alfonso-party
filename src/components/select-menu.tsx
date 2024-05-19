@@ -1,10 +1,9 @@
 'use client';
 
-import { useMenuState } from '../hooks/use-menu-state';
-import { MenuOptions } from '../firebase/types';
+import { useMenuGuestState, useMenuState } from 'hooks';
+import { MenuOptions } from 'firebase/types';
 import { useEffect, useState } from 'react';
-import { useMenuGuestState } from '../hooks/use-menu-guest-state';
-import { setGuestMenu as setGuestMenuToDB } from '../firebase/set-menu';
+import { setGuestMenu as setGuestMenuToDB } from 'firebase';
 import { useRouter } from 'next/navigation';
 import { ButtonTACC } from './button-tacc';
 

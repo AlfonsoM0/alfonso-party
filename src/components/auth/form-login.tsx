@@ -1,8 +1,8 @@
 'use client';
 
-import { useAuth } from '../../hooks/use-auth';
+import { useAuth } from 'hooks';
 import { useState } from 'react';
-import { logInAdmin } from '../../utils/log-in';
+import { logInAdmin } from 'utils';
 
 export function FormLogin() {
   const { setAdmin } = useAuth();

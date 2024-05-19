@@ -1,6 +1,6 @@
 'use client';
 
-import { useAuth } from '../../hooks/use-auth';
+import { useAuth } from 'hooks';
 import Link from 'next/link';
 
 export function AuthNav() {

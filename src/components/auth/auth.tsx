@@ -1,9 +1,8 @@
 'use client';
 
-import { useAuth } from '../../hooks/use-auth';
+import { useAuth } from 'hooks';
 import { ReactNode } from 'react';
 import { FormLogin } from './form-login';
-import Link from 'next/link';
 
 export function Auth({ children }: { children: ReactNode }) {
   const { admin, setAdmin } = useAuth();
