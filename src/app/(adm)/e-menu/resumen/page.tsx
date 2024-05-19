@@ -1,3 +1,3 @@
-import Page from '../../../menu/reservas/resumen/page';
+import Page from '../../../(guest)/menu/reservas/resumen/page';
 
 export default Page;

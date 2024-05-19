@@ -1,11 +1,11 @@
 import { GuestMenusContainer } from 'components/guest-menus-container';
-import { getAllGuestMenu } from '../../../../firebase/get-all-menu';
-import { GuestMenu } from '../../../../firebase/types';
+import { getAllGuestMenu } from 'firebase/get-all-menu';
+import { GuestMenu } from 'firebase/types';
 import { Metadata } from 'next/types';
-import { orderAllGuestByDate } from '../../../../utils/order-all-guest-by-date';
-import { getShoppingResumen } from '../../../../utils/get-shopping-resumen';
-import { deleteOldGuestMenus } from '../../../../utils/delete-old-guest-menus';
-import { hsToDeleteAGuesMenu } from '../../../../config/const';
+import { orderAllGuestByDate } from 'utils/order-all-guest-by-date';
+import { getShoppingResumen } from 'utils/get-shopping-resumen';
+import { deleteOldGuestMenus } from 'utils/delete-old-guest-menus';
+import { hsToDeleteAGuesMenu } from 'config/const';
 
 export const revalidate = 0;
 

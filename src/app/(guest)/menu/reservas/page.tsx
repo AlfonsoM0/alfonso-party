@@ -1,10 +1,10 @@
 import { GuestMenusContainer } from 'components/guest-menus-container';
-import { getAllGuestMenu } from '../../../firebase/get-all-menu';
+import { getAllGuestMenu } from 'firebase/get-all-menu';
 import { Metadata } from 'next/types';
-import { orderAllGuestByDate } from '../../../utils/order-all-guest-by-date';
+import { orderAllGuestByDate } from 'utils/order-all-guest-by-date';
 import { ClickToUpdate } from './click-to-update';
-import { deleteOldGuestMenus } from '../../../utils/delete-old-guest-menus';
-import { hsToDeleteAGuesMenu } from '../../../config/const';
+import { deleteOldGuestMenus } from 'utils/delete-old-guest-menus';
+import { hsToDeleteAGuesMenu } from 'config/const';
 import Link from 'next/link';
 
 export const revalidate = 0;

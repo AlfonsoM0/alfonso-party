@@ -18,7 +18,11 @@
       }
     ],
     "paths": {
-      "components/*": ["./src/components/*"]
+      "components/*": ["./src/components/*"],
+      "firebase/*": ["./src/firebase/*"],
+      "utils/*": ["./src/utils/*"],
+      "config/*": ["./src/config/*"],
+      "hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
