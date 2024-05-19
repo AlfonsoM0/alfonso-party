@@ -107,7 +107,7 @@ export function SelectMenu() {
 
       <h2>Total: ${guestMenu.totalPrice}</h2>
 
-      <button onClick={onSubmit} disabled={isSubmit} className="w-full mt-5">
+      <button onClick={onSubmit} disabled={isSubmit} className="w-full mt-5 text-info">
         {isSubmit ? <div className="loading loading-spinner" /> : 'Crear Pedido'}
       </button>
     </>
