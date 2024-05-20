@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Alfonso | Fiesta Retro',
   description: 'Te invito a mi cumpleaños.',
+  manifest: '/manifest.json',
 };
 
 export default async function RootLayout({

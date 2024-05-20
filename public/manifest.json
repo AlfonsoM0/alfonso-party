@@ -1,0 +1,56 @@
+{
+  "theme_color": "#003566",
+  "background_color": "#003566",
+  "display": "minimal-ui",
+  "orientation": "any",
+  "scope": "/",
+  "start_url": "http://fiesta.alfonso.ar",
+  "name": "Alfonso | Fiesta Retro",
+  "short_name": "Fiesta Retro",
+  "description": "Fiesta Retro de Cumpleaños de Alfonso.",
+  "icons": [
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "🍕 Menu",
+      "short_name": "🍕 Menu",
+      "description": "Elige tu menu.",
+      "url": "http://fiesta.alfonso.ar/menu",
+      "icons": [
+        {
+          "src": "/android-chrome-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    },
+    {
+      "name": "🎤 Karaoke",
+      "short_name": "🎤 Karaoke",
+      "description": "Agrega tus Karaokes favoritos.",
+      "url": "http://fiesta.alfonso.ar/karaoke",
+      "icons": [
+        {
+          "src": "/android-chrome-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "maskable"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/app_screenshots.png",
+      "type": "image/png",
+      "sizes": "483x994"
+    }
+  ]
+}
