@@ -4,7 +4,7 @@
   "display": "minimal-ui",
   "orientation": "any",
   "scope": "/",
-  "start_url": "http://fiesta.alfonso.ar",
+  "start_url": "https://fiesta.alfonso.ar/",
   "name": "Alfonso | Fiesta Retro",
   "short_name": "Fiesta Retro",
   "description": "Fiesta Retro de Cumpleaños de Alfonso.",
@@ -21,7 +21,7 @@
       "name": "🍕 Menu",
       "short_name": "🍕 Menu",
       "description": "Elige tu menu.",
-      "url": "http://fiesta.alfonso.ar/menu",
+      "url": "https://fiesta.alfonso.ar/menu",
       "icons": [
         {
           "src": "/android-chrome-512x512.png",
@@ -35,7 +35,7 @@
       "name": "🎤 Karaoke",
       "short_name": "🎤 Karaoke",
       "description": "Agrega tus Karaokes favoritos.",
-      "url": "http://fiesta.alfonso.ar/karaoke",
+      "url": "https://fiesta.alfonso.ar/karaoke",
       "icons": [
         {
           "src": "/android-chrome-512x512.png",
