@@ -26,10 +26,10 @@ export default async function Page() {
   const orderedGuestsMenusNotPaid = orderedGuestsMenus.filter((guest) => !guest.isPaid);
 
   return (
-    <main className="flex min-h-[calc(100vh-66px)] flex-col items-center py-5 pt-20 pb-10">
+    <main className="main-normal flex flex-col items-center">
       <h1>Reservas</h1>
       <ClickToUpdate />
-      <Link className="mt-5 text-info" href="/menu">
+      <Link className="mt-5" href="/menu">
         Volver al Menú
       </Link>
 

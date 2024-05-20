@@ -1,5 +1,6 @@
 import { getVIP } from 'firebase';
 import { redirect } from 'next/navigation';
+import MainPage from '../page';
 
 // Revaliadte in 1 hours
 export const revalidate = 60 * 60 * 1;
@@ -10,7 +11,7 @@ export default async function Page({ params }: { params: { vip: string } }) {
   try {
     const infoVIP = await getVIP(vip);
 
-    if (!infoVIP) return <></>;
+    if (!infoVIP) return MainPage();
     const { guest, msg, rol } = infoVIP;
 
     return (
@@ -30,6 +31,7 @@ export default async function Page({ params }: { params: { vip: string } }) {
           data-tip="Confirmar Google Calendar"
         >
           <a
+            className="text-neutral"
             href="https://calendar.app.google/twzDcTZaSMsLMY8s5"
             rel="noopener noreferrer"
             target="_blank"

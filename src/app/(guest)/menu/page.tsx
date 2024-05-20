@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-[calc(100vh-66px)] flex flex-col items-center justify-center p-5 pt-20">
+    <main className="main-normal flex flex-col items-center justify-center">
       <h1 id="menu">Menú</h1>
       <p>Para comer de 23:00 a 01:00hs</p>
 

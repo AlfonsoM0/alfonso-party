@@ -17,7 +17,7 @@ export default async function Page() {
   const payedGuestsMenus = orderedGuestsMenus.filter((guest) => guest.isPaid);
 
   return (
-    <main className="min-h-screen max-w-[400px] m-auto pt-10">
+    <main className="main-normal">
       <h1>Menu Editor</h1>
 
       <br />

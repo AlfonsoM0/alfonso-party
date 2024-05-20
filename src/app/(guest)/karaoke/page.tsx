@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-[calc(100vh-66px)] max-w-[400px] m-auto flex flex-col items-center justify-center p-5">
+    <main className="main-normal flex flex-col items-center justify-center">
       <h1>Karaoke</h1>
       <p>¡Es hora de brillar!</p>
 
@@ -28,7 +28,7 @@ export default function Page() {
           width={400}
           height={300}
         />
-        <Link className="text-info" href={karaokeListUrl} rel="noopener noreferrer" target="_blank">
+        <Link href={karaokeListUrl} rel="noopener noreferrer" target="_blank">
           Ir a YouTube
         </Link>
       </div>

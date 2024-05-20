@@ -25,7 +25,7 @@ export default function Home() {
         className="tooltip w-full animate-in zoom-in duration-500"
         data-tip="Confirmar Google Calendar"
       >
-        <a href={calendarUrl} rel="noopener noreferrer" target="_blank">
+        <a className="text-neutral" href={calendarUrl} rel="noopener noreferrer" target="_blank">
           {isShowNav ? 'VER EVENTO' : 'ASISTIR'}
         </a>
       </div>

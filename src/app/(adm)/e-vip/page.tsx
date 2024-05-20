@@ -13,7 +13,7 @@ export default async function Page() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center pt-10">
+    <main className="main-normal flex flex-col items-center justify-center">
       <h1>VIP Editor</h1>
 
       <EditorVIP />
