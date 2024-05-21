@@ -1,10 +1,10 @@
 import { Auth } from 'components/auth/auth';
 import { AuthNav } from 'components/auth/auth-nav';
 import { GuestNav } from 'components/guest-nav';
+import { revalidateAdmin } from 'config/revalidate-page';
 import type { Metadata } from 'next';
 
-// Revalidate every 30 seconds all admin pages
-export const revalidate = 30;
+export const revalidate = revalidateAdmin;
 
 export const metadata: Metadata = {
   title: 'Alfonso | Amin',

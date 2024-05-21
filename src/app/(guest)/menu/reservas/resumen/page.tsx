@@ -4,9 +4,9 @@ import type { GuestMenu } from 'firebase/types';
 import { Metadata } from 'next/types';
 import { deleteOldGuestMenus, getShoppingResumen, orderAllGuestByDate } from 'utils';
 import { hsToDeleteAGuesMenu } from 'config/const';
+import { revalidateMenuReservasResumen } from 'config/revalidate-page';
 
-// Revalidate every 1 hour.
-export const revalidate = 60 * 60 * 1;
+export const revalidate = revalidateMenuReservasResumen;
 
 export const metadata: Metadata = {
   title: 'Alfonso | Reservas',

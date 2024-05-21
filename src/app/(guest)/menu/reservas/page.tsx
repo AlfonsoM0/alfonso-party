@@ -5,9 +5,9 @@ import { deleteOldGuestMenus, orderAllGuestByDate } from 'utils';
 import { ClickToUpdate } from './click-to-update';
 import { hsToDeleteAGuesMenu } from 'config/const';
 import Link from 'next/link';
+import { revalidateMenuReservas } from 'config/revalidate-page';
 
-// Revalidate every 3 seconds.
-export const revalidate = 3;
+export const revalidate = revalidateMenuReservas;
 
 export const metadata: Metadata = {
   title: 'Alfonso | Reservas',

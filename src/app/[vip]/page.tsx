@@ -2,9 +2,9 @@ import { getVIP } from 'firebase';
 import { redirect } from 'next/navigation';
 import MainPage from '../page';
 import { SaveVipUrl } from './SaveVipUrl';
+import { revalidateVip } from 'config/revalidate-page';
 
-// Revaliadte in 24 hours
-export const revalidate = 60 * 60 * 24;
+export const revalidate = revalidateVip;
 
 export default async function Page({ params }: { params: { vip: string } }) {
   const vip = decodeURIComponent(params.vip);
