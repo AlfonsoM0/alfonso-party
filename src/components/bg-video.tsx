@@ -7,7 +7,7 @@ import Image from 'next/image';
 import bgRetro from 'public/Disco_Ball.svg';
 import { usePathname } from 'next/navigation';
 
-const VideoSrc = dynamic(() => import('./video'), { ssr: false, loading: () => fallbackImage });
+const VideoSrc = dynamic(() => import('./video'), { ssr: false });
 
 interface BgVideoProps {
   isWhiteBg?: boolean;
@@ -36,6 +36,7 @@ export function BgVideo({ isWhiteBg, vipsUrls = [] }: BgVideoProps) {
         {!isMuted ? <Icon.AudioOn width={60} /> : <Icon.AudioOff width={60} />}
       </button>
 
+      {fallbackImage}
       <VideoSrc
         // src
         src={videoSRC}
@@ -56,7 +57,14 @@ export function BgVideo({ isWhiteBg, vipsUrls = [] }: BgVideoProps) {
 }
 
 const fallbackImage = (
-  <div className="fixed top-0 left-0 w-full h-full object-cover z-[-10] px-[25vw] pt-[15vh] pb-[10vh]">
-    <Image src={bgRetro} alt="Fiesta Retro" width={1280} height={720} className="opacity-20" />
+  <div className="fixed top-0 left-0 w-full h-full object-cover z-[-11] px-[25vw] pt-[15vh] pb-[10vh] animate-in zoom-in">
+    <Image
+      priority
+      src={bgRetro}
+      alt="Fiesta Retro"
+      width={1280}
+      height={720}
+      className="opacity-20"
+    />
   </div>
 );
