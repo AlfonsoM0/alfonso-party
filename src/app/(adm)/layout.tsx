@@ -1,5 +1,6 @@
 import { Auth } from 'components/auth/auth';
 import { AuthNav } from 'components/auth/auth-nav';
+import { GuestNav } from 'components/guest-nav';
 import type { Metadata } from 'next';
 
 // Revalidate every 0 seconds all admin pages
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <Auth>
       <AuthNav />
+      <GuestNav style={{ top: 'calc(100vh - 40px)' }} />
       {children}
     </Auth>
   );
