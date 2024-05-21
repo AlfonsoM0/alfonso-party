@@ -6,7 +6,8 @@ import { ClickToUpdate } from './click-to-update';
 import { hsToDeleteAGuesMenu } from 'config/const';
 import Link from 'next/link';
 
-export const revalidate = 0;
+// Revalidate every 3 seconds.
+export const revalidate = 3;
 
 export const metadata: Metadata = {
   title: 'Alfonso | Reservas',

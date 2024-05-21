@@ -5,7 +5,8 @@ import { Metadata } from 'next/types';
 import { deleteOldGuestMenus, getShoppingResumen, orderAllGuestByDate } from 'utils';
 import { hsToDeleteAGuesMenu } from 'config/const';
 
-export const revalidate = 0;
+// Revalidate every 1 hour.
+export const revalidate = 60 * 60 * 1;
 
 export const metadata: Metadata = {
   title: 'Alfonso | Reservas',
@@ -59,6 +60,8 @@ export default async function Page() {
     <main className="main-normal flex flex-col items-center justify-center">
       <h1>Reservas</h1>
       <span>Resumen total de comida pagada</span>
+      <span>Se actualiza cada 1 hora.</span>
+
       <span>$ {GuestPartyTacc.totalPrice + GuestPartyNoTacc.totalPrice}</span>
 
       <br />
