@@ -8,6 +8,7 @@ export const revalidate = 0;
 export const metadata: Metadata = {
   title: 'Alfonso | Amin',
   description: 'Gestión del evento.',
+  manifest: '/manifest-adm.json',
 };
 
 export default function RootLayout({
