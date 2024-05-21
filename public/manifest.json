@@ -1,6 +1,6 @@
 {
-  "theme_color": "#d0021b",
-  "background_color": "#d0021b",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "fullscreen",
   "orientation": "any",
   "scope": "/",
@@ -10,35 +10,48 @@
   "description": "Fiesta de Cumplea\u00f1os Retro de Alfonso.",
   "icons": [
     {
-      "src": "/icon-144x144.png",
+      "src": "/maskable_icon_x144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-192x192.png",
+      "src": "/maskable_icon_x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/maskable_icon_x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/maskable_icon_x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/maskable_icon_x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/maskable_icon_x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icon-256x256.png",
+      "src": "/maskable_icon_x256.png",
       "sizes": "256x256",
       "type": "image/png",
       "purpose": "maskable"
     },
-    {
-      "src": "/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
+
     {
       "src": "favicon.ico",
       "sizes": "72x72 96x96 128x128 256x256",
@@ -54,7 +67,7 @@
       "url": "/menu",
       "icons": [
         {
-          "src": "/icon-512x512.png",
+          "src": "/maskable_icon_x256.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "maskable"
@@ -68,7 +81,7 @@
       "url": "/karaoke",
       "icons": [
         {
-          "src": "/icon-512x512.png",
+          "src": "/maskable_icon_x256.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "maskable"
