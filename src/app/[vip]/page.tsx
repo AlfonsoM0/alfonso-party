@@ -1,6 +1,7 @@
 import { getVIP } from 'firebase';
 import { redirect } from 'next/navigation';
 import MainPage from '../page';
+import { SaveVipUrl } from './SaveVipUrl';
 
 // Revaliadte in 1 hours
 export const revalidate = 60 * 60 * 1;
@@ -16,6 +17,8 @@ export default async function Page({ params }: { params: { vip: string } }) {
 
     return (
       <main className="flex h-[87vh] mt-5 max-w-xs m-auto flex-col items-center justify-center gap-12">
+        <SaveVipUrl vipUrl={params.vip} />
+
         <div>
           <h1>{guest}</h1>
           <p>{msg}</p>

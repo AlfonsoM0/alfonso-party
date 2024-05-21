@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { useShowNavState } from 'hooks';
+import { useShowNavState, useVipUrlState } from 'hooks';
 import { useEffect } from 'react';
 
 export function GuestNav() {
   const { setShowNav } = useShowNavState();
+  const { vipUrl } = useVipUrlState();
 
   useEffect(() => {
     setShowNav(true);
@@ -31,6 +32,14 @@ export function GuestNav() {
           🎤 Karaoke
         </Link>
       </div>
+
+      {vipUrl ? (
+        <div>
+          <Link className="btn btn-md btn-ghost rounded-full" type="button" href={`${vipUrl}`}>
+            🪪 VIP
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 }
