@@ -57,17 +57,14 @@ export function BgVideo({ isWhiteBg, vipsUrls = [] }: BgVideoProps) {
 }
 
 const fallbackImage = (
-  <div className="fixed top-0 left-0 w-full h-full object-cover z-[-11] px-[25vw] pt-[15vh] pb-[10vh] animate-in zoom-in">
+  <div className="fixed top-0 left-0 w-full h-[80vh] object-cover z-[-11] flex justify-center">
     <Image
+      className="opacity-20"
       priority
       src={bgRetro}
       alt="Fiesta Retro"
       width={400}
       height={400}
-      className="opacity-20"
     />
   </div>
 );
-
-// width={640}
-// height={360}
