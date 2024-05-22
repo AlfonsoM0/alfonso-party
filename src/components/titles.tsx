@@ -12,14 +12,19 @@ const msgOptions = [
   '¡Metele pal baile Retro!',
 ];
 
-export function Titles() {
+interface TitlesProps {
+  guest?: string;
+  message?: string;
+}
+
+export function Titles({ guest, message }: TitlesProps) {
   const searchParams = useSearchParams();
 
   const name64 = searchParams.get('n');
-  const name = name64 ? atob(name64) : 'Fiesta Retro';
+  const name = guest || (name64 && atob(name64)) || 'Fiesta Retro';
 
   const customMsg64 = searchParams.get('m');
-  const customMsg = customMsg64 ? atob(customMsg64) : null;
+  const customMsg = message || (customMsg64 && atob(customMsg64)) || null;
 
   const [msg, setMsg] = useState(customMsg || 'Cumpleaños Dance');
 

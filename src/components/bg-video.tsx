@@ -62,9 +62,12 @@ const fallbackImage = (
       priority
       src={bgRetro}
       alt="Fiesta Retro"
-      width={1280}
-      height={720}
+      width={400}
+      height={400}
       className="opacity-20"
     />
   </div>
 );
+
+// width={640}
+// height={360}
