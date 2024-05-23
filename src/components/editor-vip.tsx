@@ -23,31 +23,58 @@ export function EditorVIP({ name, msg, rol, isEdit }: CardSendWpProps): JSX.Elem
   const [isSend, setIsSend] = useState(false || isEdit);
 
   function createAndCopy() {
-    const wpMsg = `¡Hola ${nameUser}! *Tienes una invitación especial en:* https://fiesta.alfonso.ar/${encodeURIComponent(
-      nameUser
-    )} `;
-    navigator.clipboard.writeText(wpMsg);
+    const wpMsg = `
+¡Hola ${nameUser}!
+
+%0A%0A
+*Tienes una invitación especial en:* 
+%0A
+https://fiesta.alfonso.ar/${encodeURIComponent(nameUser)} 
+%0A%0A
+✨🪩✨
+%0A%0A
+…🕺…
+%0A%0A
+¡Ya falta poco!
+%0A%0A
+*En la descripción del evento encontrarás enlaces a:*
+%0A%0A
+- *🎤 Karaoke:* Agrega un par de canciones de Karaoke Retro a la playlist. Así sabremos lo que cantarás y lo que te gusta para la fiesta.
+%0A%0A
+- *🍕 Menú:* Si vienes temprano a comer, no olvides reservar tu menú. ¡Compré unas pizzas para invitar, pero no me da para todo el mundo! :V
+%0A%0A
+Además, puedes instalar la app en tu teléfono… porque quiero quedar en tu memoria 🫶🏻
+%0A%0A
+¡Nos vemos en la fiesta, _Alfonso_ !🎂🕺
+    `;
 
     if (!nameUser || !rolUser) return;
 
     if (!isEdit) {
       setNameUser('');
-      setRolUser('');
     }
 
-    if (isSend) return;
+    /* "Link equivalent"
+      href={`https://api.whatsapp.com/send?phone=${phone}&text=${wpMsg}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    */
+    const phone = process.env.NEXT_PUBLIC_ADMIN_PHONE || '';
+    window.location.assign(`https://api.whatsapp.com/send?phone=${phone}&text=${wpMsg}`);
 
+    if (isSend) return;
     const newVip: VIP = {
       guest: nameUser,
       msg: messageUser,
       rol: rolUser,
     };
     setVip(newVip)
-      .then(() => console.info(newVip))
+      .then(() => {
+        console.info(newVip);
+        setIsSend(true);
+        router.refresh();
+      })
       .catch((error) => console.error(error));
-
-    router.refresh();
-    setIsSend(true);
   }
 
   const formBorder = isSend ? 'border-success' : 'border-error';
@@ -105,7 +132,7 @@ export function EditorVIP({ name, msg, rol, isEdit }: CardSendWpProps): JSX.Elem
 
         <div className="tooltip" data-tip="Copiar al portapapeles">
           <button type="button" onClick={createAndCopy}>
-            {isEdit ? 'Editar' : 'Crear'} y Copiar Mensaje
+            {isEdit ? 'Editar' : 'Crear'} y Copiar en WP
           </button>
         </div>
       </div>
