@@ -29,7 +29,7 @@ export function EditorVIP({ name, msg, rol, isEdit }: CardSendWpProps): JSX.Elem
 %0A%0A
 *Tienes una invitación especial en:* 
 %0A
-https://fiesta.alfonso.ar/${encodeURIComponent(nameUser)} 
+https://fiesta.alfonso.ar/${nameUser.split(' ').join('%20')} 
 %0A%0A
 ✨🪩✨
 %0A%0A
