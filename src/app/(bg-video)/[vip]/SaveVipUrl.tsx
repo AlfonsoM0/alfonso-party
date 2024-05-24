@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useVipUrlState } from '../../hooks/use-vip-url-state';
+import { useVipUrlState } from 'hooks';
 import { useShowNavState } from 'hooks';
 import { GuestNav } from 'components/guest-nav';
 
