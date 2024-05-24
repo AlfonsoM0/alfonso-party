@@ -33,6 +33,12 @@ export function GuestNav({ style }: { style?: React.CSSProperties }) {
         </Link>
       </div>
 
+      <div>
+        <Link className="btn btn-md btn-ghost rounded-full" type="button" href="/map">
+          📌 Lugar
+        </Link>
+      </div>
+
       {vipUrl ? (
         <div>
           <Link className="btn btn-md btn-ghost rounded-full" type="button" href={`${vipUrl}`}>

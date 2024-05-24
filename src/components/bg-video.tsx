@@ -17,7 +17,7 @@ interface BgVideoProps {
 
 export function BgVideo({ isWhiteBg, vipsUrls = [], videosUrls }: BgVideoProps) {
   const urlPath = usePathname();
-  const isHome = ['/', ...vipsUrls].includes(urlPath);
+  const isHome = ['/', '/map', ...vipsUrls].includes(urlPath);
 
   const videos = videosUrls?.length
     ? videosUrls
