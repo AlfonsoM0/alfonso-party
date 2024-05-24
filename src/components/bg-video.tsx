@@ -12,13 +12,16 @@ const VideoSrc = dynamic(() => import('./video'), { ssr: false });
 interface BgVideoProps {
   isWhiteBg?: boolean;
   vipsUrls?: string[];
+  videosUrls?: string[];
 }
 
-export function BgVideo({ isWhiteBg, vipsUrls = [] }: BgVideoProps) {
+export function BgVideo({ isWhiteBg, vipsUrls = [], videosUrls }: BgVideoProps) {
   const urlPath = usePathname();
   const isHome = ['/', ...vipsUrls].includes(urlPath);
 
-  const videos = ['/bg-retro.mp4', '/bg_discoball_pruple_music.mp4', '/bg_discoball_red_music.mp4'];
+  const videos = videosUrls?.length
+    ? videosUrls
+    : ['/bg-retro.mp4', '/bg_discoball_pruple_music.mp4', '/bg_discoball_red_music.mp4'];
   const videoSRC = videos[Math.floor(Math.random() * videos.length)];
 
   const [isMuted, setIsMuted] = useState(true);
