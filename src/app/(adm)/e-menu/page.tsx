@@ -21,9 +21,12 @@ export default async function Page() {
       <h1>Menu Editor</h1>
 
       <br />
-      <div className="flex justify-center">
+      <div className="flex flex-col gap-2 justify-center">
         <Link className="btn-md" href="/e-menu/resumen">
           Ver Resumen de Reservas
+        </Link>
+        <Link className="btn-md" href="/e-menu/reservas">
+          Ver Reservas
         </Link>
       </div>
       <br />
