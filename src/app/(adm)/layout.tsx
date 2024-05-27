@@ -20,7 +20,6 @@ export default function RootLayout({
   return (
     <Auth>
       <AuthNav />
-      <GuestNav style={{ top: 'calc(100vh - 40px)' }} />
       {children}
     </Auth>
   );
