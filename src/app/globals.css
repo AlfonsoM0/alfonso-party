@@ -28,6 +28,8 @@
   }
 }
 
-.main-normal {
-  @apply min-h-[calc(100vh-66px)] max-w-screen-sm m-auto p-5 pt-24;
+@layer utilities {
+  .main-normal {
+    @apply min-h-[calc(100vh-66px)] max-w-screen-sm m-auto p-5 pt-24;
+  }
 }
