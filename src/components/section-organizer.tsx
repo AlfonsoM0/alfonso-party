@@ -3,18 +3,12 @@
 import Link from 'next/link';
 import { useVipUrlState } from '../hooks/use-vip-url-state';
 import { useState } from 'react';
+import { eventMapLink, organizerPass } from 'config/const';
 
 export function SectionOrganizer(): JSX.Element {
-  const mapURL = 'https://maps.app.goo.gl/zDWH8ygStbV81b1TA';
-
-  const { isOrganizer } = useVipUrlState();
+  const { isOrganizer, organizerKey, setOrganizerKey } = useVipUrlState();
 
   const [isShowOrgOps, setIsShowOrgOps] = useState(false);
-
-  function copyLinkToClipboard() {
-    navigator.clipboard.writeText(mapURL);
-    alert('Link copiado al portapapeles');
-  }
 
   return (
     <section className="mt-28">
@@ -34,20 +28,55 @@ export function SectionOrganizer(): JSX.Element {
           ) : null}
         </div>
       ) : (
-        <div className="border p-5 rounded-xl">
-          <h2>Eres Organizador del Evento</h2>
-          <p>Tienes acceso a las siguientes opciones.</p>
-
-          <div className="flex flex-wrap gap-2 mt-5 justify-center">
-            <Link href={mapURL} className="btn-sm h-fit" target="_blank" rel="noopener noreferrer">
-              Abrir ubicación en Google Maps
-            </Link>
-            <button onClick={copyLinkToClipboard} className="btn-sm  h-fit">
-              Compartir el enlace con tu Grupo
-            </button>
-          </div>
-        </div>
+        <OrganizerPass organizerKey={organizerKey} setOrganizerKey={setOrganizerKey} />
       )}
     </section>
+  );
+}
+
+function OrganizerPass({
+  organizerKey,
+  setOrganizerKey,
+}: {
+  organizerKey: string;
+  setOrganizerKey: (value: string) => void;
+}) {
+  function copyLinkToClipboard() {
+    navigator.clipboard.writeText(eventMapLink);
+    alert('Link copiado al portapapeles');
+  }
+
+  if (organizerKey === organizerPass)
+    return (
+      <div className="border p-5 rounded-xl">
+        <h2>Eres Organizador del Evento</h2>
+        <p>Tienes acceso a las siguientes opciones.</p>
+
+        <div className="flex flex-wrap gap-2 mt-5 justify-center">
+          <Link
+            href={eventMapLink}
+            className="btn-sm h-fit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir ubicación en Google Maps
+          </Link>
+          <button onClick={copyLinkToClipboard} className="btn-sm  h-fit">
+            Compartir el enlace con tu Grupo
+          </button>
+        </div>
+      </div>
+    );
+
+  return (
+    <div className="flex justify-center mt-40">
+      <input
+        type="password"
+        className="input input-bordered text-center"
+        value={organizerKey}
+        onChange={(e) => setOrganizerKey(e.target.value)}
+        placeholder="Clave de organizador"
+      />
+    </div>
   );
 }
