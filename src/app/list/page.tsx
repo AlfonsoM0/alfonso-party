@@ -14,7 +14,9 @@ export default function Page() {
   }
 
   function loadGuestList() {
-    getGuestList().then(setGuestList);
+    getGuestList()
+      .then((res) => console.info(res))
+      .catch(console.error);
   }
 
   const guestListCheckedIn = filterGuestList().filter((guest) => guest.isCheckedIn);

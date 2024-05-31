@@ -3,6 +3,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { GuestAsistance } from 'firebase/types';
+import { guestListCopyPasteFromLog } from 'config/const';
 
 interface GuestListProps {
   guestList: GuestAsistance[];
@@ -13,7 +14,7 @@ interface GuestListProps {
 export const useGuestListState = create<GuestListProps>()(
   persist(
     (set) => ({
-      guestList: [],
+      guestList: guestListCopyPasteFromLog,
 
       setGuestList: (guestList) => {
         set({ guestList });
