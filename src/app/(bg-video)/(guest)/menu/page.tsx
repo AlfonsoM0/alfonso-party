@@ -17,14 +17,17 @@ export default function Page() {
         Ver Pedidos
       </Link>
 
-      <section className="max-w-md  p-5">
+      <h2 className="mt-5 text-error">Ya no se pueden realizar reservas.</h2>
+      <p className="text-error"> ¡ Que Explote la Fiesta 🕺 !</p>
+
+      {/* <section className="max-w-md  p-5">
         <h2>Reserva tu Menú</h2>
         <p className="text-xs text-info">* Click en `TACC` para elegir con o sin.</p>
         <p className="text-xs text-info">* `Crear Pedido` para crear y ver todos los pedidos.</p>
         <p className="text-xs text-info mb-2">* Solo los pedidos pagados son reservados.</p>
 
         <SelectMenu />
-      </section>
+      </section> */}
     </main>
   );
 }

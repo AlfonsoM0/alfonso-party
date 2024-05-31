@@ -14,6 +14,12 @@ interface InvitationProps {
 export function Invitation({ guest, message, rol }: InvitationProps) {
   const { isShowNav } = useShowNavState();
 
+  function alertNoMoreParticipantsAreAllowed() {
+    alert(
+      'Euh! 😁 \n Ya no se aceptan mas invitados. Si llegaste tarde para confirmar tu asistencia, ponte en contacto con el organizador para solicitar una entrada personalizada. - \n\n GRACIAS! 🕺'
+    );
+  }
+
   return (
     <main className="flex h-[87vh] max-w-xs m-auto flex-col items-center justify-center gap-12">
       {isShowNav ? <GuestNav /> : null}
@@ -30,6 +36,7 @@ export function Invitation({ guest, message, rol }: InvitationProps) {
       <div
         className="tooltip w-full animate-in zoom-in duration-500"
         data-tip="Confirmar Google Calendar"
+        onClick={alertNoMoreParticipantsAreAllowed}
       >
         <a className="text-neutral" href={calendarUrl} rel="noopener noreferrer" target="_blank">
           {isShowNav ? 'VER EVENTO' : 'ASISTIR'}
