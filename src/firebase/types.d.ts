@@ -25,3 +25,10 @@ export type GuestMenu = {
   isPaid: boolean;
   createdAt: string;
 };
+
+export type GuestAsistance = {
+  name: string;
+  isOrganizer: boolean;
+  isVip: boolean;
+  isCheckedIn: boolean;
+};
