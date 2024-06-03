@@ -36,7 +36,7 @@ export function Invitation({ guest, message, rol }: InvitationProps) {
       <div
         className="tooltip w-full animate-in zoom-in duration-500"
         data-tip="Confirmar Google Calendar"
-        onClick={alertNoMoreParticipantsAreAllowed}
+        // onClick={alertNoMoreParticipantsAreAllowed}
       >
         <a className="text-neutral" href={calendarUrl} rel="noopener noreferrer" target="_blank">
           {isShowNav ? 'VER EVENTO' : 'ASISTIR'}
